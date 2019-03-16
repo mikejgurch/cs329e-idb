@@ -33,6 +33,49 @@ def authors():
 def publishers():
     return render_template('html/publishers.html')
 
+# all routes belowe this -----!!!!!!
+# change when we get html files
+# books
+""" 
+@app.route('/book/book1')
+def publishers():
+    return render_template('html/book1.html')
+
+@app.route('/book/book2/')
+def publishers():
+    return render_template('html/book2.html')
+
+@app.route('/book/book3/')
+def publishers():
+    return render_template('html/book3.html')
+
+# authors
+@app.route('/author/JKRowling')
+def publishers():
+    return render_template('html/JKRowling.html')
+
+@app.route('/author/author2')
+def publishers():
+    return render_template('html/author2.html')
+
+@app.route('/author/author3/')
+def publishers():
+    return render_template('html/author3.html')
+
+# publishers
+@app.route('/publisher/publisher1')
+def publishers():
+    return render_template('html/publisher1.html')
+
+@app.route('/publisher/publisher2/')
+def publishers():
+    return render_template('html/publisher2.html')
+
+@app.route('/publisher/publisher3/')
+def publishers():
+    return render_template('html/publisher3.html')
+"""
+
 # if main.py is run directly, i.e., as the main module, it will be assigned the value main
 # and if it's main go ahead and run the application.
 # if this application is imported, then the __name__ is no longer __main__ and
@@ -40,7 +83,7 @@ def publishers():
 
 if __name__ == "__main__":
     app.run()
-#----------------------------------------
+#-----------------------------------------
 # end of main.py
 #-----------------------------------------
 
