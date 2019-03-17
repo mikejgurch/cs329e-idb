@@ -1,7 +1,7 @@
-#-----------------------------------------
+# -----------------------------------------
 # main.py
 # creating first flask application
-#-----------------------------------------
+# -----------------------------------------
 #
 #
 
@@ -17,35 +17,45 @@ app = Flask(__name__)
 # summary: type in a URL, flask check the URL, finds the associate function with it, runs the
 # function, collect responses, and send back the results to the browser.
 
+
 @app.route('/')
 def index():
     return render_template('html/index.html')
 
-@app.route('/book/')
-def book():
-    return render_template('html/book.html')
+
+@app.route('/books/')
+def books():
+    return render_template('html/books.html')
+
 
 @app.route('/authors/')
 def authors():
     return render_template('html/authors.html')
 
+
 @app.route('/publishers/')
 def publishers():
     return render_template('html/publishers.html')
 
+
+@app.route('/about/')
+def publishers():
+    return render_template('html/about.html')
+
+
 # all routes belowe this -----!!!!!!
 # change when we get html files
 # books
-""" 
-@app.route('/book/book1')
+"""
+@app.route('/books/HPSorcererStone')
 def publishers():
-    return render_template('html/book1.html')
+    return render_template('html/HPSorcererStone.html')
 
-@app.route('/book/book2/')
+@app.route('/books/book2/')
 def publishers():
     return render_template('html/book2.html')
 
-@app.route('/book/book3/')
+@app.route('/books/book3/')
 def publishers():
     return render_template('html/book3.html')
 
@@ -63,9 +73,9 @@ def publishers():
     return render_template('html/author3.html')
 
 # publishers
-@app.route('/publisher/publisher1')
+@app.route('/publisher/Pottermore')
 def publishers():
-    return render_template('html/publisher1.html')
+    return render_template('html/Pottermore.html')
 
 @app.route('/publisher/publisher2/')
 def publishers():
@@ -83,7 +93,6 @@ def publishers():
 
 if __name__ == "__main__":
     app.run()
-#-----------------------------------------
+# -----------------------------------------
 # end of main.py
-#-----------------------------------------
-
+# -----------------------------------------
