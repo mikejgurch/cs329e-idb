@@ -20,70 +20,72 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('html/index.html')
+    return render_template('index.html')
 
 
 @app.route('/books/')
 def books():
-    return render_template('html/books.html')
+    return render_template('books.html')
 
 
 @app.route('/authors/')
 def authors():
-    return render_template('html/authors.html')
+    return render_template('authors.html')
 
 
 @app.route('/publishers/')
 def publishers():
-    return render_template('html/publishers.html')
+    return render_template('publishers.html')
 
 
 @app.route('/about/')
 def about():
-    return render_template('html/about.html')
+    return render_template('about.html')
 
 
 # all routes belowe this -----!!!!!!
 # change when we get html files
 # books
+
 """
 @app.route('/books/HPSorcererStone')
 def HPSorcererStone():
-    return render_template('html/HPSorcererStone.html')
+    return render_template('HPSorcererStone.html')
+
 
 @app.route('/books/book2/')
 def publishers():
-    return render_template('html/book2.html')
+    return render_template('book2.html')
 
 @app.route('/books/book3/')
 def publishers():
-    return render_template('html/book3.html')
+    return render_template('book3.html')
 
 # authors
 @app.route('/authors/JKRowling')
 def JKRowling():
-    return render_template('html/JKRowling.html')
+    return render_template('JKRowling.html')
 
 @app.route('/authors/author2')
 def publishers():
-    return render_template('html/author2.html')
+    return render_template('author2.html')
 
 @app.route('/authors/author3/')
 def publishers():
-    return render_template('html/author3.html')
+    return render_template('author3.html')
 
 # publishers
 @app.route('/publishers/Pottermore')
 def Pottermore():
-    return render_template('html/Pottermore.html')
+    return render_template('Pottermore.html')
 
 @app.route('/publishers/publisher2/')
 def publishers():
-    return render_template('html/publisher2.html')
+    return render_template('publisher2.html')
 
 @app.route('/publishers/publisher3/')
 def publishers():
-    return render_template('html/publisher3.html')
+    return render_template('publisher3.html')
 """
 
 # if main.py is run directly, i.e., as the main module, it will be assigned the value main
