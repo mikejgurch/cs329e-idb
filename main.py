@@ -39,7 +39,7 @@ def publishers():
 
 
 @app.route('/about/')
-def publishers():
+def about():
     return render_template('html/about.html')
 
 
@@ -48,7 +48,7 @@ def publishers():
 # books
 """
 @app.route('/books/HPSorcererStone')
-def publishers():
+def HPSorcererStone():
     return render_template('html/HPSorcererStone.html')
 
 @app.route('/books/book2/')
@@ -60,28 +60,28 @@ def publishers():
     return render_template('html/book3.html')
 
 # authors
-@app.route('/author/JKRowling')
-def publishers():
+@app.route('/authors/JKRowling')
+def JKRowling():
     return render_template('html/JKRowling.html')
 
-@app.route('/author/author2')
+@app.route('/authors/author2')
 def publishers():
     return render_template('html/author2.html')
 
-@app.route('/author/author3/')
+@app.route('/authors/author3/')
 def publishers():
     return render_template('html/author3.html')
 
 # publishers
-@app.route('/publisher/Pottermore')
-def publishers():
+@app.route('/publishers/Pottermore')
+def Pottermore():
     return render_template('html/Pottermore.html')
 
-@app.route('/publisher/publisher2/')
+@app.route('/publishers/publisher2/')
 def publishers():
     return render_template('html/publisher2.html')
 
-@app.route('/publisher/publisher3/')
+@app.route('/publishers/publisher3/')
 def publishers():
     return render_template('html/publisher3.html')
 """
