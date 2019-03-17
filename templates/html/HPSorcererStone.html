@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books</title>
+    <link rel="shortcut icon" href="../rsc/favicon.png" type="image/x-icon">
+
+    <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="../css/sticky-footer.css">
+
+    <!--Custom JS-->
+    <script src="../js/footer.js"></script>
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{url_for('index')}}">
+                <img src="../rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
+            </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('books')}}">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('authors')}}">Authors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about')}}">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Content-->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-1"><br/></div>
+                <div class="col-4 text-center pt-5">
+                    <img src=" https://books.google.com/books/content/images/frontcover/wrOQLV6xB-wC?fife=w500 " alt="SorcererStone " style="width:100%; display:block; margin:auto ">
+                </div>
+                <div class="col-6 text-center pt-4">
+                    <h2 class="mb-3 ">Harry Potter and the Sorcerer's Stone</h2>
+                    <table class="table table-striped" style="width:100%; margin:auto">
+                        <tr>
+                            <th scope="row ">Author</th>
+                            <td><a href="{{url_for('JKRowling')}}">J. K. Rowling</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Publisher</th>
+                            <td><a href="{{url_for('Pottermore')}}">Pottermore</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Publication Date</th>
+                            <td>2015-12-08</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">ISBN</th>
+                            <td>9781781100486</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Google ID</th>
+                            <td>wrOQLV6xB-wC</td>
+                        </tr>
+                    </table>
+                    <br />
+                    <p>"Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter 'H'. " Harry Potter has never even heard of Hogwarts when the letters
+                        start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great
+                        beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!
+                    </p>
+                </div>
+                <div class="col-1"><br/></div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer bg-light ">
+        <div class="container ">
+            <div class="row text-center d-flex justify-content-center pt-4 ">
+                <div class="col-lg h-100 text-center text-lg-center my-auto ">
+                    <ul class="list-inline mb-2 ">
+                        <li class="list-inline-item ">
+                            <a href="# ">About</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="# ">Contact</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="# ">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="# ">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0 " id="currentDate "></p>
+                    <p class="text-muted small mb-4 mb-lg-0 ">&copy; goodbooksfor.me <span id="currentYear ">201</span>. All Rights Reserved.</p>
+                    <script>
+                        window.addEventListener("load ", function() {
+                            currentDate();
+                            currentYear();
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
