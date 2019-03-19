@@ -22,11 +22,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-
+'''
 @app.route('/books/')
 def books():
     return render_template('books.html')
-
+'''
+@app.route('/books/')
+def books():
+    return render_template('books.html')
 
 @app.route('/authors/')
 def authors():
@@ -45,47 +48,49 @@ def about():
 
 # all routes belowe this -----!!!!!!
 # change when we get html files
-# books
 
-"""
+# Books:
+
 @app.route('/books/HPSorcererStone/')
 def HPSorcererStone():
     return render_template('HPSorcererStone.html')
 
-@app.route('/books/book2/')
-def publishers():
-    return render_template('book2.html')
+@app.route('/books/AnimalFarm/')
+def AnimalFarm():
+    return render_template('AnimalFarm.html')
 
-@app.route('/books/book3/')
-def publishers():
-    return render_template('book3.html')
+@app.route('/books/ToKillaMockingBird/')
+def TKMB():
+    return render_template('TKMB.html')
 
-# authors
+# Authors:
+
 @app.route('/authors/JKRowling')
 def JKRowling():
     return render_template('JKRowling.html')
 
-@app.route('/authors/author2')
-def publishers():
-    return render_template('author2.html')
+@app.route('/authors/GeorgeOrwell')
+def GeorgeOrwell():
+    return render_template('GeorgeOrwell.html')
 
-@app.route('/authors/author3/')
-def publishers():
-    return render_template('author3.html')
+@app.route('/authors/HarperLee/')
+def HarperLee():
+    return render_template('HarperLee.html')
 
-# publishers
+# Publishers:
+
 @app.route('/publishers/Pottermore')
 def Pottermore():
     return render_template('Pottermore.html')
 
-@app.route('/publishers/publisher2/')
-def publishers():
-    return render_template('publisher2.html')
+@app.route('/publishers/ScholasticCo/')
+def ScholasticCo():
+    return render_template('ScholasticCo.html')
 
-@app.route('/publishers/publisher3/')
-def publishers():
-    return render_template('publisher3.html')
-"""
+@app.route('/publishers/HarperCollins/')
+def HarperCollins():
+    return render_template('HarperCollins.html')
+
 
 # if main.py is run directly, i.e., as the main module, it will be assigned the value main
 # and if it's main go ahead and run the application.
