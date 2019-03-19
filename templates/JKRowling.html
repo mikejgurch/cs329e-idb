@@ -10,12 +10,9 @@
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -32,7 +29,7 @@
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{{url_for('index')}}">
-                <img src="./static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
+                <img src="/static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
             </a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -57,18 +54,15 @@
             <div class="row">
                 <div class="col-1"><br /></div>
                 <div class="col-4 text-center pt-5">
-                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/220px-J._K._Rowling_2010.jpg "
-                        alt="JKRowling" style="width:80%; display: block; margin: auto ">&nbsp;
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/220px-J._K._Rowling_2010.jpg " alt="JKRowling" style="width:75%; display: block; margin: auto ">&nbsp;
                 </div>
                 <div class="col-6 pt-4">
                     <h2 class="mb-3 ">J. K. Rowling</h2>
                     <hr />
-                    <p>Joanne "Jo" Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British
-                        novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy
-                        series. </p>
+                    <p>Joanne "Jo" Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series. </p>
                     <table class="table table-striped" style="width:100%">
                         <tr>
-                            <th scope="row ">Birthday</th>
+                            <th scope="row ">Born</th>
                             <td>1965-07-31</td>
                         </tr>
                         <tr>
@@ -117,10 +111,9 @@
                         </li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
-                        All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
                     <script>
-                        window.addEventListener("load", function () {
+                        window.addEventListener("load", function() {
                             currentDate();
                             currentYear();
                         });

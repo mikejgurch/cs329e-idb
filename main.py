@@ -48,10 +48,9 @@ def about():
 # books
 
 """
-@app.route('/books/HPSorcererStone')
+@app.route('/books/HPSorcererStone/')
 def HPSorcererStone():
     return render_template('HPSorcererStone.html')
-
 
 @app.route('/books/book2/')
 def publishers():

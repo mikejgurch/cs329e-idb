@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Publishers</title>
+    <title>1984</title>
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
@@ -52,26 +52,35 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1>Publishers</h1>
-                    <ul class="text-center pr-5" style="list-style-type:none;">
-                        <li>
-                            <a href="{{url_for('Pottermore')}}" style="color: inherit">
-                                <h5>Pottermore</h5>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('ScholasticCo')}}" style="color: inherit">
-                                <h5>Scholastic Corporation</h5>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('HarperCollins')}}" style="color: inherit">
-                                <h5>HarperCollins</h5>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="col-1"><br /></div>
+                <div class="col-4 text-center pt-5">
+                    <img src=" https://books.google.com/books/content/images/frontcover/huZBDAAAQBAJ?fife=w500 " alt="AnimalFarm " style="width:75%; display:block; margin:auto ">
                 </div>
+                <div class="col-6 text-center pt-4">
+                    <h2 class="mb-3 ">Animal Farm</h2>
+                    <table class="table table-striped" style="width:100%; margin:auto">
+                        <tr>
+                            <th scope="row ">Author</th>
+                            <td><a href="{{url_for('GeorgeOrwell')}}">George Orwell</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Publisher</th>
+                            <td><a href="{{url_for('ScholasticCo')}}">Scholastic Corporation</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Publication Date</th>
+                            <td>2016-05-30</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Google ID</th>
+                            <td>huZBDAAAQBAJ</td>
+                        </tr>
+                    </table>
+                    <br />
+                    <p>Tired of their servitude to man, a group of farm animals revolt and establish their own society, only to be betrayed into worse servitude by their leaders, the pigs, whose slogan becomes: "All animals are equal, but some animals are
+                        more equal than others." This 1945 satire addresses the socialist/communist philosophy of Stalin in the Soviet Union.</p>
+                </div>
+                <div class="col-1"><br /></div>
             </div>
         </div>
     </main>
