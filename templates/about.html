@@ -42,7 +42,7 @@
                     <a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('about')}}">About Us</a>
+                    <a class="nav-link" href="{{url_for('about')}}">About</a>
                 </li>
             </ul>
         </div>
@@ -83,6 +83,7 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-2"></div>
                 <div class="col-md-4">
                     <div class="card text-center pt-2" style="width:300px; margin:auto; height:auto">
                         <img class="card-img-top img-fluid" src="/static/rsc/Michael.jpg" alt="Michael" style="width:245px; height:325px; display:block; margin:auto">
@@ -99,6 +100,7 @@
                     </div>
                     <br />
                 </div>
+                <div class="col-2"></div>
             </div>
             <div class="row">
                 <table class="table table-striped" style="width:80%; margin:auto">
@@ -158,7 +160,7 @@
                 <div class="col-lg h-100 text-center text-lg-center my-auto">
                     <ul class="list-inline mb-2">
                         <li class="list-inline-item">
-                            <a href="#">About</a>
+                            <a href="{{url_for('about')}}">About</a>
                         </li>
                         <li class="list-inline-item">&sdot;</li>
                         <li class="list-inline-item">
