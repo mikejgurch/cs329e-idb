@@ -1,0 +1,210 @@
+commit 980d635d22f939675400552e0ecd1c6c2db709b9
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Sun Mar 24 00:04:50 2019 -0500
+
+    Add image for wade and update link in about.html
+
+commit 8940103adaf0ced3389e01807b439fe51c9e8a0e
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sat Mar 23 22:35:12 2019 -0500
+
+    Updated about page to meet project requirements
+
+commit e727278bd13eeaa84d4ba80440cec41ef2bde0b2
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sat Mar 23 22:11:33 2019 -0500
+
+    Updated links to footers
+
+commit 6b08c8fce4849a719d0148343f359baea93b64bc
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sat Mar 23 22:07:54 2019 -0500
+
+    Added terms of use and private policy pages
+
+commit 0bbe94471d8ef99249f8240fcf20fbac04a0174a
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Fri Mar 22 15:37:21 2019 -0500
+
+    fixed small typo in requirments.txt
+
+commit 2f60039634c577d9131f86d8cc8ad2c5ccc4e743
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Fri Mar 22 15:34:39 2019 -0500
+
+    added a requirements.txt file for GCP deployment
+
+commit 1f61686bbe7bf002d1fd47eebaf01e58f54006c9
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Thu Mar 21 18:02:42 2019 -0500
+
+    Rotated Michael pic and edited nav bar
+
+commit 80f7d70f4c34731199b053d9cd7ea0b77e0f9c5e
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Thu Mar 21 14:59:24 2019 -0500
+
+    updated Michael profile pic
+
+commit d690ddc4ef4ce5ec54d2de840716cd22aa94396f
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Thu Mar 21 14:13:54 2019 -0500
+
+    added the app.yaml file for GCP deployment
+
+commit d480ee72b19b8ef1bfe4525db730276740eda228
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Thu Mar 21 02:01:02 2019 -0500
+
+    Added photos to profiles on about page.
+
+commit 2502580d42ccc6d7283a7024b5e73ef75feeba74
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Wed Mar 20 19:53:09 2019 -0500
+
+    Updated profile in about page
+
+commit ed503a80616810999c5e8e451fca41ffe564de98
+Merge: 42533fc f366bcb
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Wed Mar 20 13:59:26 2019 -0500
+
+    Merge branch 'dev' of https://gitlab.com/codingking5/cs329e-idb into dev
+
+commit 42533fcbaec4411fe773d36dac6d9e4e987835da
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Wed Mar 20 13:58:51 2019 -0500
+
+    added profile description in about.html
+
+commit f366bcb151b5e8d792fb6a7f1927ae6a147c57e8
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Tue Mar 19 23:37:01 2019 -0500
+
+    Linked all books, authors, and publisher pages to each other. Fixes #14.
+
+commit 0e3705af37a84810fc3ff1928bfe8d009bbb6009
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Tue Mar 19 14:48:28 2019 -0500
+
+    Added routes for all the links in every page
+
+commit c3fc2f6a93f6b1f1548907ec9dae7515ea5ec9b0
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Mon Mar 18 21:27:19 2019 -0500
+
+    Made pages for 2 more books, authors, and publishers. Fixes #11.
+
+commit d0f181f9839eba4ecd86b61bf71e3d4b1b4a77a2
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Mon Mar 18 01:45:37 2019 -0500
+
+    Fixed javascript in footer. Now produces date. Fixes #10.
+
+commit dcc4541d88bbf5da45c1c37dd4e6cfa1df114aa1
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Mon Mar 18 01:38:55 2019 -0500
+
+    Uncommented new html pages from main.py. Fixes #9.
+
+commit 576769d9da5cf42a50d118f8285147e5db78d7ac
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Mon Mar 18 01:06:24 2019 -0500
+
+    added content and images to the home page
+
+commit c0824d661e53c219000f5f0be0035a91a3cf0c0c
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Sun Mar 17 20:22:05 2019 -0500
+
+    create a .gitignore file
+
+commit 68c846ca3565b5baa674802179d4e2342107f140
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sun Mar 17 17:57:17 2019 -0500
+
+    Fixed carousel. Closes #5
+
+commit 1d565775ac078b8b963061330d98bfd5b8ed0907
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sun Mar 17 17:43:44 2019 -0500
+
+    Fixed paths for Flask and reorganized folders
+
+commit 223a1299e569faad35d863be4b8b369eddfab407
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sun Mar 17 15:52:32 2019 -0500
+
+    updated paths for Flask
+
+commit 47cf9f3ab1269a707e5f75f7c09ba20e55da852d
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sun Mar 17 15:38:44 2019 -0500
+
+    Added stats table to About page & updated main.py
+
+commit 0c65a5f781dbc399a494770f2e6580880a79e69a
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sat Mar 16 20:59:16 2019 -0500
+
+    Created About page
+
+commit fb0912118f1a28749fdc3374428c42a0b054fcbf
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sat Mar 16 20:16:41 2019 -0500
+
+    created basic books, authors, and publishers pages
+
+commit f69ed91e41a3bcc6a35e7b0dbaf2123b7cb9272c
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sat Mar 16 19:38:49 2019 -0500
+
+    changed href to be compatible with Flask
+
+commit 5087828b0c587b7ca52ae06682beea294ab97a70
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sat Mar 16 19:37:45 2019 -0500
+
+    changed href to be compatible with Flask
+
+commit 63204bb390ee959f0711691ee63445831a1a4393
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sat Mar 16 19:34:00 2019 -0500
+
+    added pages for 1 book, author, and publisher
+
+commit 1385c00ed69854f7d1548bcc4aabf78505965b73
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Sat Mar 16 18:42:45 2019 -0500
+
+    added additonal app routes for html files
+
+commit 84df1aa8cc27ffc1315b03f99eb054c0e0d263d2
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Sat Mar 16 18:23:59 2019 -0500
+
+    Added routes to main.py
+
+commit 83a199afdbb01859773b12f212db52f1c4e797ab
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sat Mar 16 01:05:01 2019 -0500
+
+    fixed edge of image
+
+commit 83c4728c850ba3bd8bb82585718793f05a0374fe
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sat Mar 16 01:02:18 2019 -0500
+
+    updated images for text to be readable
+
+commit 32cbd6d20b2b06944624f596c21674722c95391c
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sat Mar 16 00:39:41 2019 -0500
+
+    initial concept
+
+commit 7caa4565fdbe1527ebcf2ae889c66abe4599120f
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Thu Mar 14 22:11:32 2019 +0000
+
+    Initial commit
