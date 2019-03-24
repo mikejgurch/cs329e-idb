@@ -1,3 +1,21 @@
+commit d1e734376a43db9427326c4b281fbada72d712e7
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Sun Mar 24 14:23:50 2019 -0500
+
+    Added profile photo in rsc and updated link in about.html
+
+commit 8d568446fbd82dd7e8734763db1beccda0080fba
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sun Mar 24 01:58:29 2019 -0500
+
+    Formatted cards on About page to be the same height
+
+commit c28bd499b8b04d40efe8349f4d3bdbe8d7449cce
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Sun Mar 24 00:22:58 2019 -0500
+
+    updating log
+
 commit 014abc047a8c090f8ec4b0f15826073505c12867
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Sun Mar 24 00:21:56 2019 -0500
