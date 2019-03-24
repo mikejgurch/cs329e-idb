@@ -10,9 +10,15 @@
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -54,12 +60,15 @@
             <div class="row">
                 <div class="col-1"><br /></div>
                 <div class="col-4 text-center pt-5">
-                    <img src="http://upload.wikimedia.org/wikipedia/en/thumb/0/00/Harpercollins-logo.svg/250px-Harpercollins-logo.svg.png" alt="HarperCollins" style="width:80%; display: block; margin: auto ">&nbsp;
+                    <img src="http://upload.wikimedia.org/wikipedia/en/thumb/0/00/Harpercollins-logo.svg/250px-Harpercollins-logo.svg.png"
+                        alt="HarperCollins" style="width:80%; display: block; margin: auto ">&nbsp;
                 </div>
                 <div class="col-6 pt-4">
                     <h2 class="mb-3 ">HarperCollins</h2>
                     <hr />
-                    <p>HarperCollins Publishers LLC is one of the world's largest publishing companies and is part of the "Big Five" English-language publishing companies, alongside Hachette, Holtzbrinck/Macmillan, Penguin Random House, and Simon &amp; Schuster.</p>
+                    <p>HarperCollins Publishers LLC is one of the world's largest publishing companies and is part of
+                        the "Big Five" English-language publishing companies, alongside Hachette, Holtzbrinck/Macmillan,
+                        Penguin Random House, and Simon &amp; Schuster.</p>
                     <table class="table table-striped" style="width:100%">
                         <tr>
                             <th scope="row ">Parent Company</th>
@@ -79,7 +88,9 @@
                         </tr>
                         <tr>
                             <th scope="row ">Wikipedia</th>
-                            <td><a href="https://en.wikipedia.org/wiki/HarperCollins">https://en.wikipedia.org/wiki/HarperCollins</a></td>
+                            <td><a
+                                    href="https://en.wikipedia.org/wiki/HarperCollins">https://en.wikipedia.org/wiki/HarperCollins</a>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -87,7 +98,8 @@
             </div>
             <div class="row">
                 <div class="col text-left">
-                    <h3>Authors: <a href="{{url_for('HarperLee')}}" class="pl-5" style="color: inherit; font-size:16pt">&nbsp;&emsp;Harper Lee</a> </h3>
+                    <h3>Authors: <a href="{{url_for('HarperLee')}}" class="pl-5"
+                            style="color: inherit; font-size:16pt">&nbsp;&emsp;Harper Lee</a> </h3>
                 </div>
             </div>
             <br />
@@ -98,7 +110,8 @@
                 <div class="col-md-3">
                     <div class="card" style="width:12em">
                         <a href="{{url_for('TKMB')}}">
-                            <img class="card-img-top img-fluid" src="https://books.google.com/books/content/images/frontcover/-D8WBAAAQBAJ?fife=w500 "
+                            <img class="card-img-top img-fluid"
+                                src="https://books.google.com/books/content/images/frontcover/-D8WBAAAQBAJ?fife=w500 "
                                 alt="TKMB" style="width:200px; height:250px; display:block; margin:auto">
                         </a>
                     </div>
@@ -118,21 +131,18 @@
                         </li>
                         <li class="list-inline-item">&sdot;</li>
                         <li class="list-inline-item">
-                            <a href="#">Contact</a>
+                            <a href="{{url_for('terms')}}">Terms of Use</a>
                         </li>
                         <li class="list-inline-item">&sdot;</li>
                         <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
+                            <a href="{{url_for('privacy')}}">Privacy Policy</a>
                         </li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
+                        All Rights Reserved.</p>
                     <script>
-                        window.addEventListener("load", function() {
+                        window.addEventListener("load", function () {
                             currentDate();
                             currentYear();
                         });
