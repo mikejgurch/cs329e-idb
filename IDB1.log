@@ -1,3 +1,15 @@
+commit 200ef2e41ffe77a92a08cb96ab8f2ded4ecb884c
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Sun Mar 24 15:08:35 2019 -0500
+
+    Added ability for stats table to automatically total rows and columns.
+
+commit 0acf04064c3ce38e38422a302469593b8268c981
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Sun Mar 24 14:27:53 2019 -0500
+
+    updating log
+
 commit d1e734376a43db9427326c4b281fbada72d712e7
 Author: Jorge Caviedes <alecav98@gmail.com>
 Date:   Sun Mar 24 14:23:50 2019 -0500
