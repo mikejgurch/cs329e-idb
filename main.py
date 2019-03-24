@@ -45,6 +45,13 @@ def publishers():
 def about():
     return render_template('about.html')
 
+@app.route('/terms/')
+def terms():
+    return render_template('termsofuse.html')
+
+@app.route('/privacy/')
+def privacy():
+    return render_template('privacypolicy.html')
 
 # all routes belowe this -----!!!!!!
 # change when we get html files
