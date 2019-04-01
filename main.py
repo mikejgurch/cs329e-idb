@@ -6,6 +6,24 @@
 #
 
 from flask import Flask, render_template
+from create_db import app, db, Book, create_books
+
+#app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/book2/')
+def book():
+    books = db.session.query(Book).all()
+    return render_template('book2.html', books = books)
+
+if __name__ == "__main__":
+ app.run()
+# end of main3.py
+'''
+from flask import Flask, render_template
 
 # create a flask object (flask needs an object to represent the application)
 app = Flask(__name__)
@@ -23,9 +41,11 @@ def index():
     return render_template('index.html')
 
 '''
+'''
 @app.route('/books/')
 def books():
     return render_template('books.html')
+'''
 '''
 @app.route('/books/')
 def books():
@@ -106,6 +126,7 @@ def HarperCollins():
 
 if __name__ == "__main__":
     app.run()
+'''
 # -----------------------------------------
 # end of main.py
 # -----------------------------------------
