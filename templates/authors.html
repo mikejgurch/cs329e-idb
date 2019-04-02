@@ -10,14 +10,11 @@
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -59,40 +56,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1> Authors </h1>
+                    <h1 class="mb-3"> Authors </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-3 pl-5">
-                    <div class="card p-2" style="width:12em; height:15em;">
+                {% for i in authors %}
+                <div class="col-12 col-sm-6 col-md-3 pl-5 mb-3">
+                    <div class="card p-2" style="width:12em; height:17em;">
                         <a href="{{url_for('JKRowling')}}">
                             <img class="card-img-top img-fluid"
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/220px-J._K._Rowling_2010.jpg "
-                                alt="JKRowling" style="width:100%; height:200px;  display:block; margin:auto">
+                                src="{{i.image_url}}"
+                                alt="{{i.author}}" style="width:100%; height:200px;  display:block; margin:auto">
                         </a>
-                        <h5 class="text-center">J. K. Rowling </h5>
+                        <h5 class="text-center">{{i.author}}</h5><br />
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-3 pl-5">
-                    <div class="card p-2" style="width:12em; height:15em">
-                        <a href="{{url_for('GeorgeOrwell')}}">
-                            <img class="card-img-top img-fluid"
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/George_Orwell_press_photo.jpg/220px-George_Orwell_press_photo.jpg"
-                                alt="GeorgeOrwell" style="width:100%; height:200px; display:block; margin:auto">
-                        </a>
-                        <h5 class="text-center"> George Orwell </h5>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3 pl-5">
-                    <div class="card p-2" style="width:12em;height:15em">
-                        <a href="{{url_for('HarperLee')}}">
-                            <img class="card-img-top img-fluid"
-                                src="http://upload.wikimedia.org/wikipedia/commons/5/5f/HarperLee_2007Nov05.jpg "
-                                alt="HarperLee" style="width:100%; height:200px; display:block; margin:auto">
-                        </a>
-                        <h5 class="text-center"> Harper Lee </h5>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </main>
@@ -115,10 +94,9 @@
                         </li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
-                        All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
                     <script>
-                        window.addEventListener("load", function () {
+                        window.addEventListener("load", function() {
                             currentDate();
                             currentYear();
                         });

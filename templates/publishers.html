@@ -10,14 +10,11 @@
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -59,26 +56,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1>Publishers</h1>
-                    <ul class="text-center pr-5" style="list-style-type:none;">
-                        <li>
-                            <a href="{{url_for('Pottermore')}}" style="color: inherit">
-                                <h5>Pottermore</h5>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('ScholasticCo')}}" style="color: inherit">
-                                <h5>Scholastic Corporation</h5>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{url_for('HarperCollins')}}" style="color: inherit">
-                                <h5>HarperCollins</h5>
-                            </a>
-                        </li>
-                    </ul>
+                    <h1 class="mb-3"> Publishers </h1>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="row">
+                        <table class="table">
+                            {% set counter = namespace(a=0) %} {% for i in publishers %} {% if counter.a == 0 %}
+                            <tr>
+                                <td style="width:200px">{{i.publisher}}</td>
+                                <!--0-->
+                                {% elif counter.a == 2 %}
+                                <td style="width:200px">{{i.publisher}}</td>
+                                <!--2-->
+                                {% set counter.a = -1 %}
+                            </tr>
+                            {% else %}
+                            <td style="width:200px">{{i.publisher}}</td>
+                            <!--1-->
+                            {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -101,10 +103,9 @@
                         </li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
-                        All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
                     <script>
-                        window.addEventListener("load", function () {
+                        window.addEventListener("load", function() {
                             currentDate();
                             currentYear();
                         });
