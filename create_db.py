@@ -19,6 +19,7 @@ def create_books():
         title = book[oneBook]['title']
         image_url = book[oneBook]['image_url']
 
+        """
         try:
             publication_date = book[oneBook]['publication_date']
         except KeyError:
@@ -44,10 +45,29 @@ def create_books():
 
         for onePublisher in book[oneBook]['publishers']:
             publisher = onePublisher['name']
+        """
+        
+        isbn = book[oneBook].get('isbn')
+        publication_date = book[oneBook].get('publication_date')
+        subtitle = book[oneBook].get('subtitle')
+        description = book[oneBook].get('description')
+        
+
+        for oneAuthor in book[oneBook]['authors']:
+            author = oneAuthor['name']
+
+        for onePublisher in book[oneBook]['publishers']:
+            publisher = onePublisher['name']
+
 
         newBook = Book(google_id=google_id, title=title, subtitle=subtitle, author=author, publisher=publisher, isbn=isbn,
                        publication_date=publication_date, description=description,
                        image_url=image_url)
+
+        # After I create the book, I can then add it to my session.
+        db.session.add(newBook)
+        # commit the session to my DB.
+        db.session.commit()
 
 
 create_books()
