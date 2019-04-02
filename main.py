@@ -19,6 +19,10 @@ def book():
     books = db.session.query(Book).all()
     return render_template('book2.html', books = books)
 
+@app.route('/about/')
+def about():
+    return render_template('about.html')
+
 if __name__ == "__main__":
  app.run()
 # end of main3.py
