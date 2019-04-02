@@ -49,11 +49,6 @@ def create_books():
                        publication_date=publication_date, description=description,
                        image_url=image_url)
 
-        # After I create the book, I can then add it to my session.
-        db.session.add(newBook)
-        # commit the session to my DB.
-        db.session.commit()
-
 
 create_books()
 # end of create_db.py
