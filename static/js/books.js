@@ -15,6 +15,7 @@ function hideBooks() {
 
 function showBooks(bookset) {
     hideBooks();
+    toggleActive(bookset);
 
     var book = "bookset_" + String(bookset);
     var x = document.getElementsByClassName(book);
@@ -22,5 +23,28 @@ function showBooks(bookset) {
     var i;
     for (i = 0; x.length; i++) {
         x[i].style.display = "block";
+    }
+}
+
+function showBooksInitial() {
+    hideBooks();
+    showBooks("1");
+}
+
+function toggleActive(current_bookpage) {
+    var i = 1;
+    while (true) {
+        var bookpage = "bookpage_" + String(i);
+        var element = document.getElementById(bookpage);
+        if (!element) {
+            break;
+        }
+        if (i == current_bookpage) {
+            element.classList.add("active");
+        } else {
+            element.classList.remove("active");
+        }
+
+        i++;
     }
 }
