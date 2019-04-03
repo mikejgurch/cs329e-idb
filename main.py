@@ -6,7 +6,8 @@
 #
 
 from flask import Flask, render_template
-from create_db import app, db, Book, create_books
+from models import app, db, Book
+from create_db import db, Book, create_books
 
 #app = Flask(__name__)
 

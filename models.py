@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True  # to suppress a warning mes
 db = SQLAlchemy(app)
 
 
-cclass Book(db.Model):
+class Book(db.Model):
     __tablename__ = 'books'
     google_id = db.Column(db.String(), primary_key=True)
     bookNum = db.Column(db.String(), nullable=False)
@@ -26,6 +26,7 @@ cclass Book(db.Model):
     isbn = db.Column(db.String(), nullable=True)
     image_url = db.Column(db.String(), nullable=True)
     description = db.Column(db.String(), nullable=True)
+
 
 db.drop_all()
 db.create_all()
