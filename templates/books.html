@@ -71,6 +71,7 @@
                     {% if counter.a % 12 == 0 %}
                     {% set bookset_counter.a = bookset_counter.a + 1 %}
                     {% endif %}
+                    {% if counter.a < 12 %}
                     <div id="book_{{i.bookNum}}"
                         class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
                         <div class="card" style="width:12em">
@@ -80,6 +81,17 @@
                             </a>
                         </div>
                     </div>
+                    {% else %}
+                    <div id="book_{{i.bookNum}}"
+                        class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
+                        <div class="card" style="width:12em">
+                            <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
+                                <img class="card-img-top img-fluid" src="{{i.image_url}}"
+                                    style="width:200px; height:250px; display:block; margin:auto">
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
                     {% set counter.a = counter.a + 1 %}
                     {% endfor %}
                 </div>
@@ -91,8 +103,8 @@
                             <li id="bookpage_1" class="page-item active"><a class="page-link" href="#bookpage_1"
                                     onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
                             {% else %}
-                            <li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link" href="#bookpage_{{i + 1}}"
-                                    onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
+                            <li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link"
+                                    href="#bookpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
                             {% endif %}
                             {% endfor %}
                         </ul>

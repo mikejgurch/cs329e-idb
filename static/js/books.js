@@ -13,6 +13,21 @@ function hideBooks() {
     }
 }
 
+function hideBooksInitial() {
+    var i = 8;
+    while (true) {
+        var book = "book_" + String(i);
+        var x = document.getElementById(book);
+        if (!x) {
+            break;
+        }
+
+        x.style.display = "none";
+
+        i++;
+    }
+}
+
 function showBooks(bookset) {
     hideBooks();
     toggleActive(bookset);
@@ -27,7 +42,7 @@ function showBooks(bookset) {
 }
 
 function showBooksInitial() {
-    hideBooks();
+    hideBooksInitial();
     showBooks("1");
 }
 
