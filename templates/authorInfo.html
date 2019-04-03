@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Publishers</title>
+    <title></title>
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
@@ -55,35 +55,76 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="mb-3"> Publishers </h1>
+                <div class="col-1"><br /></div>
+                <div class="col-4 text-center pt-5">
+                    <img src="{{i.image_url}}" alt="{{i.author}}" style="width:75%; display: block; margin: auto ">&nbsp;
                 </div>
+                <div class="col-6 pt-4">
+                    <h2 class="mb-3 ">{{i.author}}</h2>
+                    <hr /> {% if i.description is none %} {% else %}
+                    <p>{{i.description}}</p>{% endif %}
+                    <table class="table table-striped" style="width:100%">
+                        {% if i.born is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Born</th>
+                            <td>{{i.born}}</td>
+                        </tr>
+                        {% endif %}{% if i.died is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Died</th>
+                            <td>{{i.died}}</td>
+                        </tr>
+                        {% endif %}{% if i.nationality is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Nationality</th>
+                            <td>{{i.nationality}}</td>
+                        </tr>
+                        {% endif %}{% if i.education is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Education</th>
+                            <td>{{i.education}}</td>
+                        </tr>
+                        {% endif %}{% if i.alma_mater is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Alma Mater</th>
+                            <td>wikipedia_url</td>
+                        </tr>
+                        {% endif %}{% if i.wikipedia_url is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Wikipedia</th>
+                            <td><a href="{{i.wikipedia_url}}">{{i.wikipedia_url}}</a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </div>
+                <div class="col-1"><br /></div>
             </div>
             <div class="row">
-                <div class="col-12 text-center">
-                    <div class="row">
-                        <table class="table">
-                            {% set counter = namespace(a=0) %} {% for i in publishers %} {% if counter.a == 0 %}
-                            <tr>
-                                <td style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
-                                <!--0-->
-                                {% elif counter.a == 2 %}
-                                <td style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
-                                <!--2-->
-                                {% set counter.a = -1 %}
-                            </tr>
-                            {% else %}
-                            <td style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
-                            <!--1-->
-                            {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
-                        </table>
+                <div class="col text-left">
+                    <h3>Publishers:<a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}" class="pl-5"
+                            style="color: inherit; font-size:16pt">{{i.publisher}}</a> </h3>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-2 text-left">
+                    <h3>Books: </h3>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card" style="width:12em">
+                            <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
+                                <img class="card-img-top img-fluid"
+                                    src="#" style="width:200px; height:250px; display:block; margin:auto">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
-
     <!--Footer-->
     <footer class="footer bg-light">
         <div class="container">

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
+
+    <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sticky-footer.css')}}">
+
+    <!--Custom JS-->
+    <script src="{{url_for('static', filename='js/footer.js')}}"></script>
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{url_for('index')}}">
+                <img src="/static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
+            </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('books')}}">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('authors')}}">Authors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('publishers')}}">Publishers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('about')}}">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Content-->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-1"><br /></div>
+                <div class="col-4 text-center pt-5">
+                    {% if i.image_url is none %}
+                    <img src="https://s3.us-east-2.amazonaws.com/shdhs.org/2018/01/No-image-available.jpg" alt="{{i.publisher}}" style="width:80%; display: block; margin: auto ">&nbsp; {% else %}
+                    <img src="{{i.image_url}}" alt="{{i.publisher}}" style="width:80%; display: block; margin: auto ">&nbsp; {% endif %}
+                </div>
+                <div class="col-6 pt-4">
+                    <h2 class="mb-3 ">{{i.publisher}}</h2>
+                    <hr />{% if i.description is none %}
+                    <p> No description available about this publisher. </p> {% else %}
+                    <p>{{i.description}}</p>{% endif %}
+                    <table class="table table-striped" style="width:100%">
+                        {% if i.founded is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Founded</th>
+                            <td>{{i.founded}}</td>
+                        </tr>
+                        {% endif %}{% if i.owner is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Owner</th>
+                            <td>{{i.owner}}</td>
+                        </tr>
+                        {% endif %}{% if i.parent_company is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Parent Company</th>
+                            <td>{{i.parent_company}}</td>
+                        </tr>
+                        {% endif %}{% if i.location is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Location</th>
+                            <td>{{i.location}}</td>
+                        </tr>
+                        {% endif %}{% if i.website is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Website</th>
+                            <td>
+                                <a href="{{i.website}}">{{i.website}}</a>
+                            </td>
+                        </tr>
+                        {% endif %}{% if i.wikipedia_url is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Wikipedia</th>
+                            <td><a href="{{i.wikipedia_url}}">{{i.wikipedia_url}}</a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </div>
+                <div class="col-1 "><br /></div>
+            </div>
+            <div class="row ">
+                <div class="col text-left ">
+                    <h3>Authors:<a href="{{url_for('authorInfo', authorID = i.authorNum)}}" class="pl-5 "
+                            style="color: inherit; font-size:16pt ">{{i.author}}</a> </h3>
+                </div>
+            </div>
+            <br />
+            <div class="row ">
+                <div class="col-2 text-left ">
+                    <h3>Books: </h3>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="card " style="width:12em ">
+                        <a href="#">
+                            <img class="card-img-top img-fluid "
+                                src="" style="width:200px; height:250px; display:block; margin:auto ">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer bg-light ">
+        <div class="container ">
+            <div class="row text-center d-flex justify-content-center pt-4 ">
+                <div class="col-lg h-100 text-center text-lg-center my-auto ">
+                    <ul class="list-inline mb-2 ">
+                        <li class="list-inline-item ">
+                            <a href="{{url_for( 'about')}} ">About</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="{{url_for( 'terms')}} ">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item ">&sdot;</li>
+                        <li class="list-inline-item ">
+                            <a href="{{url_for( 'privacy')}} ">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0 " id="currentDate "></p>
+                    <p class="text-muted small mb-4 mb-lg-0 ">&copy; goodbooksfor.me <span id="currentYear ">2019</span>. All Rights Reserved.</p>
+                    <script>
+                        window.addEventListener("load ", function() {
+                            currentDate();
+                            currentYear();
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -6,25 +6,79 @@
 #
 
 from flask import Flask, render_template
-from create_db import app, db, Book, create_books
+from models import app, db, Book
+from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
 
 #app = Flask(__name__)
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/book2/')
-def book():
+
+@app.route('/books/')
+def books():
     books = db.session.query(Book).all()
-    return render_template('book2.html', books = books)
+    return render_template('books.html', books=books)
+
+
+@app.route('/authors/')
+def authors():
+    authors = db.session.query(Author).distinct(Author.author)
+    return render_template('authors.html', authors=authors)
+
+
+@app.route('/publishers/')
+def publishers():
+    publishers = db.session.query(Publisher).distinct(Publisher.author)
+    return render_template('publishers.html', publishers=publishers)
+
 
 @app.route('/about/')
 def about():
     return render_template('about.html')
 
+
+@app.route('/terms/')
+def terms():
+    return render_template('termsofuse.html')
+
+
+@app.route('/privacy/')
+def privacy():
+    return render_template('privacypolicy.html')
+
+
+@app.route('/bookInfo/<bookID>')
+def bookInfo(bookID):
+    book_id = str(bookID)
+    books = db.session.query(Book).all()
+    for i in books:
+        if (book_id == str(i.bookNum)):
+            return render_template('bookInfo.html', books=books, i=i)
+
+
+@app.route('/authorInfo/<authorID>')
+def authorInfo(authorID):
+    author_id = str(authorID)
+    authors = db.session.query(Author).all()
+    for i in authors:
+        if (author_id == str(i.authorNum)):
+            return render_template('authorInfo.html', authors=authors, i=i)
+
+
+@app.route('/publisherInfo/<publisherID>')
+def publisherInfo(publisherID):
+    publisher_id = str(publisherID)
+    publishers = db.session.query(Publisher).all()
+    for i in publishers:
+        if (publisher_id == str(i.publisherNum)):
+            return render_template('publisherInfo.html', publishers=publishers, i=i)
+
+
 if __name__ == "__main__":
- app.run()
+    app.run()
 # end of main3.py
 '''
 from flask import Flask, render_template

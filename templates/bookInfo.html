@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Publishers</title>
+    <title></title>
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
@@ -55,32 +55,41 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="mb-3"> Publishers </h1>
+                <div class="col-1"><br /></div>
+                <div class="col-4 text-center pt-5">
+                    <img src={{i.image_url}} style="width:75%; display:block; margin:auto ">
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="row">
-                        <table class="table">
-                            {% set counter = namespace(a=0) %} {% for i in publishers %} {% if counter.a == 0 %}
-                            <tr>
-                                <td style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
-                                <!--0-->
-                                {% elif counter.a == 2 %}
-                                <td style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
-                                <!--2-->
-                                {% set counter.a = -1 %}
-                            </tr>
-                            {% else %}
-                            <td style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
-                            <!--1-->
-                            {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
-                        </table>
-                    </div>
+                <div class="col-6 text-center pt-4">
+                    <h2 class="mb-3 ">{{i.title}}</h2> {% if i.subtitle is none %} {% else %}
+                    <h2 class="mb-3 ">{{i.subtitle}}</h2> {% endif %}
+                    <table class="table table-striped" style="width:100%; margin:auto">
+                        <tr>
+                            <th scope="row ">Author</th>
+                            <td><a href="{{url_for('authorInfo', authorID = i.authorNum)}}">{{i.author}}</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">Publisher</th>
+                            <td><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
+                        </tr>
+                        {% if i.publication_date is none %} {% else %}
+                        <tr>
+                            <th scope="row ">Publication Date</th>
+                            <td>{{i.publication_date}}</td>
+                        </tr>{% endif %} {% if i.isbn is none %} {% else %}
+                        <tr>
+                            <th scope="row ">ISBN</th>
+                            <td>{{i.isbn}}</td>
+                        </tr>{% endif %}
+                        <tr>
+                            <th scope="row ">Google ID</th>
+                            <td>{{i.google_id}}</td>
+                        </tr>
+                    </table>
+                    <br />{% if i.description is none %} {% else %}
+                    <p>{{i.description}}{% endif %}
                 </div>
+                <div class="col-1"><br /></div>
             </div>
-
         </div>
     </main>
 
