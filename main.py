@@ -68,7 +68,13 @@ def authorInfo(authorID):
     for i in authors:
         if (author_id == str(i.authorNum)):
             bookList = [j for j in books if i.authorNum == j.authorNum]
-            return render_template('authorInfo.html', bookList=bookList, authors=authors, i=i)
+            publishers = []
+            publisherList = []
+            for k in bookList:
+                if k.publisher not in publishers:
+                    publishers.append(k.publisher)
+                    publisherList.append(k)
+            return render_template('authorInfo.html', bookList=bookList, publisherList=publisherList, authors=authors, i=i)
 
 
 @app.route('/publisherInfo/<publisherID>')
@@ -79,7 +85,13 @@ def publisherInfo(publisherID):
     for i in publishers:
         if (publisher_id == str(i.publisherNum)):
             bookList = [j for j in books if i.publisherNum == j.publisherNum]
-            return render_template('publisherInfo.html', bookList=bookList, publishers=publishers, i=i)
+            authors = []
+            authorList = []
+            for k in bookList:
+                if k.author not in authors:
+                    authors.append(k.author)
+                    authorList.append(k)
+            return render_template('publisherInfo.html', bookList=bookList, authorList=authorList, publishers=publishers, i=i)
 
 
 if __name__ == "__main__":

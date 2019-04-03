@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    "DB_STRING", 'postgres://postgres:Hklegend8@localhost:5432/bookdb')
+    "DB_STRING", 'postgres://postgres:asd123@localhost:5432/bookdb')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True  # to suppress a warning message
 db = SQLAlchemy(app)
 
