@@ -72,6 +72,7 @@ def create_authors(authorDict, publisherDict, bookDict):
         for oneAuthor in oneBook['authors']:
             author = get_info(oneBook, "authors", "name")
             authorNum = authorDict[author]
+            title = oneBook['title']
             if author not in authorslist:
                 authorslist.append(author)
                 authorNum = authorDict[author]
@@ -89,7 +90,7 @@ def create_authors(authorDict, publisherDict, bookDict):
                 image_url = oneAuthor.get('image_url')
                 description = oneAuthor.get('description')
 
-                newAuthor = Author(bookNum=bookNum, authorNum=authorNum, publisherNum=publisherNum, author=author, google_id=google_id, publisher=publisher, born=born, died=died,
+                newAuthor = Author(bookNum=bookNum, title=title, authorNum=authorNum, publisherNum=publisherNum, author=author, google_id=google_id, publisher=publisher, born=born, died=died,
                                    nationality=nationality, education=education, alma_mater=alma_mater, wikipedia_url=wikipedia_url, image_url=image_url, description=description)
 
                 db.session.add(newAuthor)
@@ -101,6 +102,7 @@ def create_publishers(authorDict, publisherDict, bookDict):
     publishersList = []
     for oneBook in book:
         for onePublisher in oneBook['publishers']:
+            title = oneBook['title']
             publishersdict = oneBook['publishers']
             publisher = get_info(oneBook, "publishers", "name")
             if publisher not in publishersList:
@@ -120,7 +122,7 @@ def create_publishers(authorDict, publisherDict, bookDict):
                 image_url = onePublisher.get('image_url')
                 description = onePublisher.get('description')
 
-                newPublisher = Publisher(bookNum=bookNum, authorNum=authorNum, publisherNum=publisherNum, publisher=publisher, parent_company=parent_company, owner=owner,
+                newPublisher = Publisher(bookNum=bookNum, title=title, authorNum=authorNum, publisherNum=publisherNum, publisher=publisher, parent_company=parent_company, owner=owner,
                                          location=location, founded=founded, google_id=google_id, author=author, wikipedia_url=wikipedia_url, description=description, website=website, image_url=image_url)
 
                 db.session.add(newPublisher)

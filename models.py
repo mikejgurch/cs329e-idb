@@ -31,8 +31,9 @@ class Book(db.Model):
 class Author(db.Model):
     __tablename__ = 'authors'
     google_id = db.Column(db.String(), primary_key=True)
-    bookNum = db.Column(db.String(), primary_key=True)
-    authorNum = db.Column(db.String(), nullable=False)
+    title = db.Column(db.String(), nullable=True)
+    bookNum = db.Column(db.String(), nullable=False)
+    authorNum = db.Column(db.String(), primary_key=True)
     born = db.Column(db.String(), nullable=True)
     died = db.Column(db.String(), nullable=True)
     nationality = db.Column(db.String(), nullable=True)
@@ -49,6 +50,7 @@ class Author(db.Model):
 class Publisher(db.Model):
     __tablename__ = 'publishers'
     google_id = db.Column(db.String(), primary_key=True)
+    title = db.Column(db.String(), nullable=True)
     bookNum = db.Column(db.String(), nullable=False)
     authorNum = db.Column(db.String(), nullable=False)
     author = db.Column(db.String(), nullable=True)

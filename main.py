@@ -56,25 +56,30 @@ def bookInfo(bookID):
     books = db.session.query(Book).all()
     for i in books:
         if (book_id == str(i.bookNum)):
-            return render_template('bookInfo.html', books=books, i=i)
+            bookList = [j for j in books if i.authorNum == j.authorNum]
+            return render_template('bookInfo.html', books=books, bookList=bookList, i=i)
 
 
 @app.route('/authorInfo/<authorID>')
 def authorInfo(authorID):
     author_id = str(authorID)
     authors = db.session.query(Author).all()
+    books = db.session.query(Book).all()
     for i in authors:
         if (author_id == str(i.authorNum)):
-            return render_template('authorInfo.html', authors=authors, i=i)
+            bookList = [j for j in books if i.authorNum == j.authorNum]
+            return render_template('authorInfo.html', bookList=bookList, authors=authors, i=i)
 
 
 @app.route('/publisherInfo/<publisherID>')
 def publisherInfo(publisherID):
     publisher_id = str(publisherID)
     publishers = db.session.query(Publisher).all()
+    books = db.session.query(Book).all()
     for i in publishers:
         if (publisher_id == str(i.publisherNum)):
-            return render_template('publisherInfo.html', publishers=publishers, i=i)
+            bookList = [j for j in books if i.publisherNum == j.publisherNum]
+            return render_template('publisherInfo.html', bookList=bookList, publishers=publishers, i=i)
 
 
 if __name__ == "__main__":

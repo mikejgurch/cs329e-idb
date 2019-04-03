@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Author Info</title>
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
@@ -87,7 +87,7 @@
                         {% endif %}{% if i.alma_mater is none %} {% else %}
                         <tr>
                             <th scope="row ">Alma Mater</th>
-                            <td>wikipedia_url</td>
+                            <td>{{i.alma_mater}}</td>
                         </tr>
                         {% endif %}{% if i.wikipedia_url is none %} {% else %}
                         <tr>
@@ -101,28 +101,32 @@
                 <div class="col-1"><br /></div>
             </div>
             <div class="row">
-                <div class="col text-left">
-                    <h3>Publishers:<a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}" class="pl-5"
-                            style="color: inherit; font-size:16pt">{{i.publisher}}</a> </h3>
+                <div class="col-3 text-left">
+                    <h3>&emsp;Publishers: </h3>
                 </div>
+            </div>
+            <div class="row">
+                {% for j in bookList %}
+                <div class="col-4 mb-2">
+                    <a href="{{url_for('publisherInfo', publisherID = j.publisherNum)}}" class="pl-5" style="color: inherit; font-size:16pt">{{j.publisher}}</a> </h3>
+                </div>{% endfor %}
             </div>
             <br />
             <div class="row">
                 <div class="col-2 text-left">
-                    <h3>Books: </h3>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card" style="width:12em">
-                            <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
-                                <img class="card-img-top img-fluid"
-                                    src="#" style="width:200px; height:250px; display:block; margin:auto">
-                            </a>
-                        </div>
-                    </div>
+                    <h3>&emsp;Books: </h3>
                 </div>
             </div>
+            <div class="row">
+                {% for j in bookList %}
+                <div class="col-3 mb-2">
+                    <a href="{{url_for('bookInfo', bookID = j.bookNum)}}">
+                                <img class="card-img-top img-fluid"
+                                    src="{{j.image_url}}" style="width:200px; height:250px; display:block; margin:auto">
+                            </a>
+                </div>{% endfor %}
+            </div>
+        </div>
         </div>
     </main>
     <!--Footer-->
