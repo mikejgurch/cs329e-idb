@@ -65,11 +65,11 @@
                     <table class="table table-striped" style="width:100%; margin:auto">
                         <tr>
                             <th scope="row ">Author</th>
-                            <td><a href="#">{{i.author}}</a></td>
+                            <td><a href="{{url_for('authorInfo', authorID = i.authorNum)}}">{{i.author}}</a></td>
                         </tr>
                         <tr>
                             <th scope="row ">Publisher</th>
-                            <td><a href="#">{{i.publisher}}</a></td>
+                            <td><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a></td>
                         </tr>
                         {% if i.publication_date is none %} {% else %}
                         <tr>

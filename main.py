@@ -7,7 +7,7 @@
 
 from flask import Flask, render_template
 from models import app, db, Book
-from create_db import db, Book, create_books
+from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
 
 #app = Flask(__name__)
 
@@ -25,12 +25,14 @@ def books():
 
 @app.route('/authors/')
 def authors():
-    return render_template('authors.html')
+    authors = db.session.query(Author).distinct(Author.author)
+    return render_template('authors.html', authors=authors)
 
 
 @app.route('/publishers/')
 def publishers():
-    return render_template('publishers.html')
+    publishers = db.session.query(Publisher).distinct(Publisher.author)
+    return render_template('publishers.html', publishers=publishers)
 
 
 @app.route('/about/')
@@ -48,30 +50,30 @@ def privacy():
     return render_template('privacypolicy.html')
 
 
-@app.route('/bookInfo/<bookName>')
-def bookInfo(bookName):
-    book_ind = str(bookName)
+@app.route('/bookInfo/<bookID>')
+def bookInfo(bookID):
+    book_id = str(bookID)
     books = db.session.query(Book).all()
     for i in books:
-        if (book_ind == str(i.bookNum)):
+        if (book_id == str(i.bookNum)):
             return render_template('bookInfo.html', books=books, i=i)
 
 
-@app.route('/authorInfo/<authorName>')
-def authorInfo(authorName):
-    author_ind = str(authorName)
+@app.route('/authorInfo/<authorID>')
+def authorInfo(authorID):
+    author_id = str(authorID)
     authors = db.session.query(Author).all()
     for i in authors:
-        if (author_ind == str(i.authorNum)):
+        if (author_id == str(i.authorNum)):
             return render_template('authorInfo.html', authors=authors, i=i)
 
 
-@app.route('/publisherInfo/<publisherName>')
-def publisherInfo(publisherName):
-    publisher_ind = str(PublisherName)
+@app.route('/publisherInfo/<publisherID>')
+def publisherInfo(publisherID):
+    publisher_id = str(publisherID)
     publishers = db.session.query(Publisher).all()
     for i in publishers:
-        if (publisher_ind == str(i.publisherNum)):
+        if (publisher_id == str(i.publisherNum)):
             return render_template('publisherInfo.html', publishers=publishers, i=i)
 
 

@@ -63,7 +63,7 @@
                 {% for i in authors %}
                 <div class="col-12 col-sm-6 col-md-3 pl-5 mb-3">
                     <div class="card p-2" style="width:12em; height:17em;">
-                        <a href="{{url_for('JKRowling')}}">
+                        <a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
                             <img class="card-img-top img-fluid"
                                 src="{{i.image_url}}"
                                 alt="{{i.author}}" style="width:100%; height:200px;  display:block; margin:auto">
