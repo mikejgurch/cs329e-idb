@@ -10,21 +10,72 @@ from create_db import app, db, Book, create_books
 
 #app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/book2/')
-def book():
+
+@app.route('/books/')
+def books():
     books = db.session.query(Book).all()
-    return render_template('book2.html', books = books)
+    return render_template('books.html', books=books)
+
+
+@app.route('/authors/')
+def authors():
+    return render_template('authors.html')
+
+
+@app.route('/publishers/')
+def publishers():
+    return render_template('publishers.html')
+
 
 @app.route('/about/')
 def about():
     return render_template('about.html')
 
+
+@app.route('/terms/')
+def terms():
+    return render_template('termsofuse.html')
+
+
+@app.route('/privacy/')
+def privacy():
+    return render_template('privacypolicy.html')
+
+
+@app.route('/bookInfo/<bookName>')
+def bookInfo(bookName):
+    book_ind = str(bookName)
+    books = db.session.query(Book).all()
+    for i in books:
+        if (book_ind == str(i.bookNum)):
+            return render_template('bookInfo.html', books=books, i=i)
+
+
+@app.route('/authorInfo/<authorName>')
+def authorInfo(authorName):
+    author_ind = str(authorName)
+    authors = db.session.query(Author).all()
+    for i in authors:
+        if (author_ind == str(i.authorNum)):
+            return render_template('authorInfo.html', authors=authors, i=i)
+
+
+@app.route('/publisherInfo/<publisherName>')
+def publisherInfo(publisherName):
+    publisher_ind = str(PublisherName)
+    publishers = db.session.query(Publisher).all()
+    for i in publishers:
+        if (publisher_ind == str(i.publisherNum)):
+            return render_template('publisherInfo.html', publishers=publishers, i=i)
+
+
 if __name__ == "__main__":
- app.run()
+    app.run()
 # end of main3.py
 '''
 from flask import Flask, render_template

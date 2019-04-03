@@ -1,6 +1,5 @@
-# beginning of create_db.py
 import json
-from models import app, db, Book
+from models import db, Book
 
 
 def load_json(filename):
@@ -11,64 +10,59 @@ def load_json(filename):
     return jsn
 
 
-def create_books():
+def parse_info(oneBook, str, detail):
+    info = oneBook[str][0]
+    return info[detail]
+
+
+def create_dictionaries():
     book = load_json('books.json')
-
-    for oneBook in range(len(book)):
-        google_id = book[oneBook]['google_id']
-        title = book[oneBook]['title']
-        image_url = book[oneBook]['image_url']
-
-        """
-        try:
-            publication_date = book[oneBook]['publication_date']
-        except KeyError:
-            publication_date = 'NULL'
-
-        try:
-            subtitle = book[oneBook]['subtitle']
-        except KeyError:
-            subtitle = 'NULL'
-
-        try:
-            isbn = book[oneBook]['isbn']
-        except KeyError:
-            isbn = 'NULL'
-
-        try:
-            description = book[oneBook]['description']
-        except KeyError:
-            description = 'NULL'
-
-        for oneAuthor in book[oneBook]['authors']:
-            author = oneAuthor['name']
-
-        for onePublisher in book[oneBook]['publishers']:
-            publisher = onePublisher['name']
-        """
-        
-        isbn = book[oneBook].get('isbn')
-        publication_date = book[oneBook].get('publication_date')
-        subtitle = book[oneBook].get('subtitle')
-        description = book[oneBook].get('description')
-        
-
-        for oneAuthor in book[oneBook]['authors']:
-            author = oneAuthor['name']
-
-        for onePublisher in book[oneBook]['publishers']:
-            publisher = onePublisher['name']
+    authorDict = {}
+    publisherDict = {}
+    bookDict = {}
+    bookNum = 0
+    authorNum = 0
+    publisherNum = 0
+    for oneBook in book:
+        author_entry = parse_info(oneBook, "authors", "name")
+        publisher_entry = parse_info(oneBook, "publishers", "name")
+        book_entry = oneBook['google_id']
+        bookNum += 1
+        bookDict[book_entry] = bookNum
+        if (author_entry not in authorDict.keys()):
+            authorNum += 1
+            authorDict[author_entry] = authorNum
+        if (publisher_entry not in publisherDict.keys()):
+            publisherNum += 1
+            publisherDict[publisher_entry] = publisherNum
+    return authorDict, publisherDict, bookDict
 
 
-        newBook = Book(google_id=google_id, title=title, subtitle=subtitle, author=author, publisher=publisher, isbn=isbn,
-                       publication_date=publication_date, description=description,
-                       image_url=image_url)
+def create_books(authorDict, publisherDict, bookDict):
+    book = load_json('books.json')
+    for oneBook in book:
+        author = parse_info(oneBook, "authors", "name")
+        authorNum = authorDict[author]
+        publisher = parse_info(oneBook, "publishers", "name")
+        publisherNum = publisherDict[publisher]
+        title = oneBook['title']
+        google_id = oneBook['google_id']
+        bookNum = bookDict[google_id]
 
+        subtitle = oneBook.get('subtitle')
+        publication_date = oneBook.get('publication_date')
+        isbn = oneBook.get('isbn')
+        image_url = oneBook.get('image_url')
+        description = oneBook.get('description')
+
+        newBook = Book(bookNum=bookNum, authorNum=authorNum, publisherNum=publisherNum, title=title, subtitle=subtitle, author=author,
+                       publisher=publisher, publication_date=publication_date, isbn=isbn, google_id=google_id, image_url=image_url, description=description)
         # After I create the book, I can then add it to my session.
         db.session.add(newBook)
         # commit the session to my DB.
         db.session.commit()
 
 
-create_books()
+authorDict, publisherDict, bookDict = create_dictionaries()
+create_books(authorDict, publisherDict, bookDict)
 # end of create_db.py
