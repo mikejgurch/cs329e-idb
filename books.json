@@ -850,7 +850,7 @@
                 "description": "Orson Scott Card is an American novelist, critic, public speaker, essayist and columnist. He writes in several genres but is known best for science fiction. ",
                 "alma_mater": "Brigham Young University\nUniversity of Utah (M.A.)\nUniversity of Notre Dame (1980s graduate student)",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Orson_Scott_Card",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg/250px-Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg"
+                "image_url": "http://www.hatrack.com/images/orson_scott_card.jpg"
             }
         ]
     },
@@ -880,7 +880,7 @@
                 "description": "Orson Scott Card is an American novelist, critic, public speaker, essayist and columnist. He writes in several genres but is known best for science fiction. ",
                 "alma_mater": "Brigham Young University\nUniversity of Utah (M.A.)\nUniversity of Notre Dame (1980s graduate student)",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Orson_Scott_Card",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg/250px-Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg"
+                "image_url": "http://www.hatrack.com/images/orson_scott_card.jpg"
             }
         ]
     },
@@ -894,7 +894,7 @@
                 "description": "Orson Scott Card is an American novelist, critic, public speaker, essayist and columnist. He writes in several genres but is known best for science fiction. ",
                 "alma_mater": "Brigham Young University\nUniversity of Utah (M.A.)\nUniversity of Notre Dame (1980s graduate student)",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Orson_Scott_Card",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg/250px-Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg"
+                "image_url": "http://www.hatrack.com/images/orson_scott_card.jpg"
             }
         ],
         "isbn": "0099194414",
@@ -940,17 +940,17 @@
                 "description": "Orson Scott Card is an American novelist, critic, public speaker, essayist and columnist. He writes in several genres but is known best for science fiction. ",
                 "alma_mater": "Brigham Young University\nUniversity of Utah (M.A.)\nUniversity of Notre Dame (1980s graduate student)",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Orson_Scott_Card",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg/250px-Orson_Scott_Card_at_BYU_Symposium_20080216_closeup.jpg"
+                "image_url": "http://www.hatrack.com/images/orson_scott_card.jpg"
             }
         ]
     },
     {
-        "google_id": "BJcgLVibkrEC",
-        "title": "Foundation and Empire",
-        "isbn": "0553900358",
+        "google_id": "IwywDY4P6gsC",
+        "title": "Foundation",
+        "isbn": "055390034X",
         "publication_date": "2004-06-01",
-        "image_url": "https://books.google.com/books/content/images/frontcover/BJcgLVibkrEC?fife=w500",
-        "description": "Although small and seemingly helpless, the Foundation had managed to survive against the greed of its neighboring warlords. But could it stand against the mighty power of the Empire, who had created a mutant man with the strength of a dozen battlefleets...? From the Paperback edition.",
+        "image_url": "https://books.google.com/books/content/images/frontcover/IwywDY4P6gsC?fife=w500",
+        "description": "For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Sheldon, creator of the revolutionary science of psychohistory, can see into the future--to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years. To preserve knowledge and save mankind, Seldon gathers the best minds in the Empire--both scientists and scholars--and brings them to a bleak planet at the edge of the Galaxy to serve as a beacon of hope for a fututre generations. He calls his sanctuary the Foundation. But soon the fledgling Foundation finds itself at the mercy of corrupt warlords rising in the wake of the receding Empire. Mankind's last best hope is faced with an agonizing choice: submit to the barbarians and be overrun--or fight them and be destroyed.",
         "publishers": [
             {
                 "location": "New York City, New York",
@@ -975,12 +975,12 @@
         ]
     },
     {
-        "google_id": "IwywDY4P6gsC",
-        "title": "Foundation",
-        "isbn": "055390034X",
+        "google_id": "BJcgLVibkrEC",
+        "title": "Foundation and Empire",
+        "isbn": "0553900358",
         "publication_date": "2004-06-01",
-        "image_url": "https://books.google.com/books/content/images/frontcover/IwywDY4P6gsC?fife=w500",
-        "description": "For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Sheldon, creator of the revolutionary science of psychohistory, can see into the future--to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years. To preserve knowledge and save mankind, Seldon gathers the best minds in the Empire--both scientists and scholars--and brings them to a bleak planet at the edge of the Galaxy to serve as a beacon of hope for a fututre generations. He calls his sanctuary the Foundation. But soon the fledgling Foundation finds itself at the mercy of corrupt warlords rising in the wake of the receding Empire. Mankind's last best hope is faced with an agonizing choice: submit to the barbarians and be overrun--or fight them and be destroyed.",
+        "image_url": "https://books.google.com/books/content/images/frontcover/BJcgLVibkrEC?fife=w500",
+        "description": "Although small and seemingly helpless, the Foundation had managed to survive against the greed of its neighboring warlords. But could it stand against the mighty power of the Empire, who had created a mutant man with the strength of a dozen battlefleets...? From the Paperback edition.",
         "publishers": [
             {
                 "location": "New York City, New York",
@@ -1169,7 +1169,8 @@
             {
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Pan_Books",
                 "name": "Pan Books",
-                "description": "Pan Books is a publishing imprint that first became active in the 1940s and is now part of the British-based Macmillan Publishers, owned by the Georg von Holtzbrinck Publishing Group of Germany.\n"
+                "description": "Pan Books is a publishing imprint that first became active in the 1940s and is now part of the British-based Macmillan Publishers, owned by the Georg von Holtzbrinck Publishing Group of Germany.\n",
+                "image_url": "https://farm2.staticflickr.com/1197/594826763_ece4e65d50_b.jpg"
             }
         ],
         "authors": [
@@ -1403,7 +1404,8 @@
         "description": "Full-color illustrations continue the adventures of Roland, the last gunslinger and survivor of a civilized world that has \"moved on.\"",
         "publishers": [
             {
-                "name": "Turtleback Books"
+                "name": "Turtleback Books",
+                "image_url": "https://www.cavalierhousebooks.com/sites/cavalierhousebooks.com/files/Turtleback%20Header.png"
             }
         ],
         "authors": [
@@ -1483,7 +1485,8 @@
         "description": "With Darken Rahl defeated, Richard and Kahlan head back to the Mud People to be married. As they wait for their wedding day to approach, they discover three Sisters of Light are pursuing Richard, intending to take him back to the Old World to be trained as a Wizard. Additionally, unbeknownst to Richard and Kahlan, the veil has been torn and the Stone of Tears has entered the world. According to prophecy, the only person who has a chance at closing the veil is the one bonded to the blade, the one born true.",
         "publishers": [
             {
-                "name": "RosettaBooks"
+                "name": "RosettaBooks",
+                "image_url": "https://images-na.ssl-images-amazon.com/images/I/41rc6cKvFSL._SY355_.png"
             }
         ],
         "authors": [
@@ -1793,39 +1796,6 @@
                 "description": "James Oliver Rigney, Jr., better known by his pen name Robert Jordan, was an American author of epic fantasy. He is best known for the Wheel of Time series, which comprises 14 books and a prequel novel. ",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Jordan",
                 "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Robert_Jordan.jpg/250px-Robert_Jordan.jpg"
-            }
-        ]
-    },
-    {
-        "google_id": "5J1fCHvHfosC",
-        "title": "Lords of Chaos",
-        "isbn": "9780922915941",
-        "publication_date": "2003",
-        "subtitle": "The Bloody Rise of the Satanic Metal Underground",
-        "image_url": "https://books.google.com/books/content/images/frontcover/5J1fCHvHfosC?fife=w500",
-        "description": "Just before the turn of the millennium nearly 100 churches had been torched and desecrated by adherents of Black Metal, the most extreme form of underground music on the planet. In an escalating unholy war, Black Metal bands and their obsessive fans have left a grim legacy of suicide, murder and terrorism spreading from Norway to Germany, Russia, America and beyond. Written by two journalists, this is a unique look at this hellish scene featuring rare photos and exclusive interviews with priests, police and Satanists.",
-        "publishers": [
-            {
-                "founded": "1989",
-                "name": "Feral House",
-                "location": "Port Townsend, Washington",
-                "description": "Feral House is a book publisher owned and operated by Adam Parfrey. Feral House describes itself as \"publishing innovative and celebrated non-fiction books since 1989. ",
-                "wikipedia_url": "https://en.wikipedia.org/wiki/Feral_House",
-                "website": "http://feralhouse.com"
-            }
-        ],
-        "authors": [
-            {
-                "born": "1969-01-17",
-                "name": "Michael Jenkins Moynihan",
-                "education": "University of Colorado\nstudied language and history\nPortland State University\nB.A. in German language",
-                "nationality": "American",
-                "description": "Michael Jenkins Moynihan is an American journalist, publisher, and musician. He is best known for co-writing the book Lords of Chaos, about black metal. ",
-                "wikipedia_url": "https://en.wikipedia.org/wiki/Michael_Jenkins_Moynihan",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Blood_Axis_2016_4.jpg/220px-Blood_Axis_2016_4.jpg"
-            },
-            {
-                "name": "Didrik Soderlind"
             }
         ]
     },
@@ -2254,7 +2224,8 @@
         "description": "Forty years ago, Harriet Vanger disappeared from a family gathering on the island owned and inhabited by the powerful Vanger clan. Her body was never found, yet her uncle is convinced it was murder - and that the killer is a member of his own tightly knit but dysfunctional family. He employs disgraced financial journalist Mikael Blomkvist and the tattooed, truculent computer hacker Lisbeth Salander to investigate. When the pair link Harriet's disappearance to a number of grotesque murders from forty years ago, they begin to unravel a dark and appalling family history. But the Vangers are a secretive clan, and Blomkvist and Salander are about to find out just how far they are prepared to go to protect themselves.",
         "publishers": [
             {
-                "name": "Hachette UK"
+                "name": "Hachette UK",
+                "image_url": "http://www.bookouture.com/wp-content/uploads/2017/03/Bookoutue-Hachette-Logo.jpg"
             }
         ],
         "authors": [
@@ -2648,31 +2619,6 @@
         ]
     },
     {
-        "google_id": "gxzuzIszO60C",
-        "title": "The Invention of Religion in Japan",
-        "isbn": "9780226412351",
-        "publication_date": "2012-10-03",
-        "image_url": "https://books.google.com/books/content/images/frontcover/gxzuzIszO60C?fife=w500",
-        "description": "Throughout its long history, Japan had no concept of what we call \u201creligion.\u201d There was no corresponding Japanese word, nor anything close to its meaning. But when American warships appeared off the coast of Japan in 1853 and forced the Japanese government to sign treaties demanding, among other things, freedom of religion, the country had to contend with this Western idea. In this book, Jason Ananda Josephson reveals how Japanese officials invented religion in Japan and traces the sweeping intellectual, legal, and cultural changes that followed. More than a tale of oppression or hegemony, Josephson\u2019s account demonstrates that the process of articulating religion offered the Japanese state a valuable opportunity. In addition to carving out space for belief in Christianity and certain forms of Buddhism, Japanese officials excluded Shinto from the category. Instead, they enshrined it as a national ideology while relegating the popular practices of indigenous shamans and female mediums to the category of \u201csuperstitions\u201d\u2014and thus beyond the sphere of tolerance. Josephson argues that the invention of religion in Japan was a politically charged, boundary-drawing exercise that not only extensively reclassified the inherited materials of Buddhism, Confucianism, and Shinto to lasting effect, but also reshaped, in subtle but significant ways, our own formulation of the concept of religion today. This ambitious and wide-ranging book contributes an important perspective to broader debates on the nature of religion, the secular, science, and superstition.",
-        "publishers": [
-            {
-                "founded": "1891",
-                "name": "University of Chicago Press",
-                "location": "Chicago",
-                "wikipedia_url": "https://en.wikipedia.org/wiki/University_of_Chicago_Press",
-                "description": "The University of Chicago Press is the largest and one of the oldest university presses in the United States.",
-                "parent company": "University of Chicago",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/University_of_Chicago_Press_logo.jpg/220px-University_of_Chicago_Press_logo.jpg",
-                "website": "http://press.uchicago.edu"
-            }
-        ],
-        "authors": [
-            {
-                "name": "Jason Ananda Josephson"
-            }
-        ]
-    },
-    {
         "google_id": "VyRqAwAAQBAJ",
         "title": "Crime and Punishment",
         "isbn": "9783736802209",
@@ -2681,7 +2627,8 @@
         "description": "Crime and Punishment is a novel by the Russian author Dostoyevsky. Crime and Punishment focuses on the mental anguish and moral dilemmas of Rodion Raskolnikov, an impoverished ex-student in St. Petersburg who formulates and executes a plan to kill an unscrupulous pawnbroker for her cash. Raskolnikov argues that with the pawnbroker's money he can perform good deeds to counterbalance the crime, while ridding the world of a worthless vermin. He also commits this murder to test his own hypothesis that some people are naturally capable of such things, and even have the right to do them. Several times throughout the novel, Raskolnikov justifies his actions by comparing himself with Napoleon Bonaparte, believing that murder is permissible in pursuit of a higher purpose.",
         "publishers": [
             {
-                "name": "BookRix"
+                "name": "BookRix",
+                "image_url": "http://blog.bookrix.com/wp-content/upload/BookRix-Blog-Button.jpg"
             }
         ],
         "authors": [
@@ -2809,8 +2756,9 @@
         "authors": [
             {
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Erik_Larson_(author)",
-                "name": "Erik Larson (author)",
-                "description": "Erik Larson is an American journalist and author of nonfiction books. He has written a number of bestsellers, such as The Devil in the White City, about the 1893 World's Columbian Exposition in Chicago and a series of murders by H. H. "
+                "name": "Erik Larson",
+                "description": "Erik Larson is an American journalist and author of nonfiction books. He has written a number of bestsellers, such as The Devil in the White City, about the 1893 World's Columbian Exposition in Chicago and a series of murders by H. H. ",
+                "image_url": "http://1.bp.blogspot.com/-xTNaBbQPqyA/Te01VPwlg4I/AAAAAAAAAMg/SE0OkFjIhew/s320/larson-pic.jpg"
             }
         ]
     },
@@ -2889,6 +2837,7 @@
             },
             {
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Rajiv_Mehrotra",
+                "image_url": "https://www.inspiringquotes.us/data/image/2015/10/c/9474-rajiv-mehrotra.jpg",
                 "name": "Rajiv Mehrotra",
                 "description": "Rajiv Mehrotra is an Indian writer, television producer-director,documentary film maker, a close personal student of HH The Dalai Lama for whom he manages as Trustee/Secretary The Foundation for Universal Responsibility established with the Nobel Peace Prize. is best known as the former acclaimed host of one of India's longest running talk shows on public television, \"In Conversation\", that has been through several incarnations over more than twenty years, aired on the India's National broadcaster, Doordarshan News Channel, Saturdays at 9.30 pm.\n"
             }
@@ -2978,7 +2927,7 @@
             {
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Gary_Younge",
                 "name": "Gary Younge",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Younge-Gary.jpg/220px-Younge-Gary.jpg",
+                "image_url": "https://www.garyyounge.com/img/gary_younge_portrait.png",
                 "born": "1969 (age\u00a046\u201347)",
                 "description": "Gary Younge is a British journalist, author and broadcaster. He is a feature writer and columnist for The Guardian newspaper and writes a monthly column for The Nation, \"Beneath the Radar\"."
             }
@@ -2999,7 +2948,7 @@
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Skyscape_(imprint)",
                 "description": "",
                 "parent company": "Amazon.com",
-                "image_url": "http://upload.wikimedia.org/wikipedia/en/thumb/8/83/Amazon_Publishing_Logo.png/220px-Amazon_Publishing_Logo.png",
+                "image_url": "https://pbs.twimg.com/profile_images/863156283158876160/RwfhAZMt_400x400.jpg",
                 "website": "http://www.apub.com/"
             }
         ],
@@ -3061,7 +3010,7 @@
                 "died": "1977-07-02",
                 "description": "Vladimir Vladimirovich Nabokov was a Russian-American novelist. His first nine novels were in Russian, and he achieved international prominence after he began writing English prose.\n",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Vladimir_Nabokov",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Vladimir_Nabokov_1969b.jpg/240px-Vladimir_Nabokov_1969b.jpg"
+                "image_url": "https://s3.amazonaws.com/pq-imgs/images/bios/Vladimir-Nabokov.j-11731.jpg"
             }
         ]
     },
@@ -3079,7 +3028,8 @@
                 "location": "Whitefish, Montana",
                 "description": "Kessinger Publishing LLC is an American print on demand publishing company located in Whitefish, Montana that specializes in rare, out of print books.",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Kessinger_Publishing",
-                "website": "http://www.kessinger.net"
+                "website": "http://www.kessinger.net",
+                "image_url": "https://www.kessinger.net/wp-content/uploads/2017/12/Kessinger_logo_large_shadowed_v4.png"
             }
         ],
         "authors": [
@@ -3183,7 +3133,8 @@
                 "nationality": "American",
                 "description": "Eric Carle is an American designer, illustrator, and writer of children's books. He is most famous for The Very Hungry Caterpillar, a picture book with few words that has been translated into more than 62 languages and sold more than 44 million copies. ",
                 "alma_mater": "Academy of Fine Arts Stuttgart\nAcademy of Fine Arts Vienna",
-                "wikipedia_url": "https://en.wikipedia.org/wiki/Eric_Carle"
+                "wikipedia_url": "https://en.wikipedia.org/wiki/Eric_Carle",
+                "image_url": "https://storytoys.com/wp-content/uploads/2016/06/eric-carle.jpg"
             }
         ]
     },
@@ -3216,7 +3167,7 @@
                 "alma_mater": "Hollins College, 1932",
                 "died": "1952-11-13",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Margaret_Wise_Brown",
-                "image_url": "http://upload.wikimedia.org/wikipedia/en/thumb/9/93/Margaret_Wise_Brown.png/220px-Margaret_Wise_Brown.png"
+                "image_url": "https://media.npr.org/assets/img/2017/01/19/brown_custom-d4a9c6eb28f35fc004df8f6000cbfc445498cbb5-s800-c85.jpg"
             }
         ]
     },
@@ -3261,7 +3212,8 @@
         "description": "George Orwell's dystopian masterpiece, Nineteen Eighty-Four is perhaps the most pervasively influential book of the twentieth century, making famous Big Brother, newspeak and Room 101. 'Who controls the past controls the future: who controls the present controls the past'",
         "publishers": [
             {
-                "name": "Arcturus Publishing"
+                "name": "Arcturus Publishing",
+                "image_url": "https://arcturuspublishing.com/wp-content/uploads/2015/07/Arcturus-Web-logo-cropped.jpg"
             }
         ],
         "authors": [
@@ -3335,7 +3287,7 @@
                 "alma_mater": "Victoria University of Manchester",
                 "died": "1993-11-22",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_Burgess",
-                "image_url": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Burgess1.jpg/220px-Burgess1.jpg"
+                "image_url": "https://images.gr-assets.com/authors/1484769559p5/5735.jpg"
             }
         ]
     },
@@ -3557,7 +3509,8 @@
                 "location": "Hauppauge, New York",
                 "description": "Barron's Educational Series, Inc. is an American test preparation company, founded in 1941 as a publisher of materials to help students to prepare for college entrance examinations, and that offers online college entrance exam preparation classes.",
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Barron%27s_Educational_Series",
-                "website": "http://www.barronseduc.com"
+                "website": "http://www.barronseduc.com",
+                "image_url": "https://img.discogs.com/KaHqm55CYnLy_MAKI-ton8q6yhw=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-63823-1149290923.jpeg.jpg"
             }
         ],
         "authors": [
@@ -3624,7 +3577,8 @@
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Markus_Zusak",
                 "name": "Markus Zusak",
                 "born": "1975-06-23",
-                "description": "Markus Frank Zusak is an Australian writer. He is best known for The Book Thief and The Messenger, two novels for young adults which have been international best-sellers. "
+                "description": "Markus Frank Zusak is an Australian writer. He is best known for The Book Thief and The Messenger, two novels for young adults which have been international best-sellers. ",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Zusak%2C_Markus._2013._Credit_Page_Thirteen.jpg"
             }
         ]
     },
@@ -3986,7 +3940,8 @@
                 "nationality": "American",
                 "description": "Steven David \"Steve\" Levitt is an American economist known for his work in the field of crime, in particular on the link between legalized abortion and crime rates. Winner of the 2003 John Bates Clark Medal, he is currently the William B. ",
                 "alma_mater": "Harvard University (A.B.)\nMIT (Ph.D.)",
-                "wikipedia_url": "https://en.wikipedia.org/wiki/Steven_Levitt"
+                "wikipedia_url": "https://en.wikipedia.org/wiki/Steven_Levitt",
+                "image_url": "https://abjjadst.blob.core.windows.net/pub/dac03e12-4b7e-4521-838e-355bf3fc6d36.jpg"
             },
             {
                 "born": "1963-08-26",
@@ -4039,7 +3994,9 @@
             {
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Everyman's_Library",
                 "name": "Everyman's Library",
-                "description": "Everyman's Library is a series of reprinted classic literature currently published in hardback by Random House. It was originally an imprint of J. M. Dent, who continue to publish Everyman Classics in paperback.\nJ. M. Dent and Company began to publish the series in 1906. "
+                "description": "Everyman's Library is a series of reprinted classic literature currently published in hardback by Random House. It was originally an imprint of J. M. Dent, who continue to publish Everyman Classics in paperback.\nJ. M. Dent and Company began to publish the series in 1906. ",
+                "image_url": "http://www.randomhouse.com/knopf/classics/images/global/header.jpg"
+
             }
         ],
         "authors": [
@@ -4215,7 +4172,8 @@
                 "wikipedia_url": "https://en.wikipedia.org/wiki/Palgrave_Macmillan",
                 "description": "Palgrave Macmillan is an international academic and trade publishing company. Its programme includes textbooks, journals, monographs, professional and reference works in print and online.\nPalgrave Macmillan was created in 2000 when St. ",
                 "parent company": "Springer Nature",
-                "website": "http://www.palgrave.com"
+                "website": "http://www.palgrave.com",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Palgrave_Macmillan_Logo.svg/2000px-Palgrave_Macmillan_Logo.svg.png"
             }
         ],
         "authors": [
