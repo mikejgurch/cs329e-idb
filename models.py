@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    "DB_STRING", 'postgres://postgres:Hklegend8@localhost:5432/bookdb')
+    "DB_STRING", 'postgres://postgres:asd123@localhost:5432/bookdb')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True  # to suppress a warning message
 db = SQLAlchemy(app)
 
@@ -31,8 +31,9 @@ class Book(db.Model):
 class Author(db.Model):
     __tablename__ = 'authors'
     google_id = db.Column(db.String(), primary_key=True)
-    bookNum = db.Column(db.String(), primary_key=True)
-    authorNum = db.Column(db.String(), nullable=False)
+    title = db.Column(db.String(), nullable=True)
+    bookNum = db.Column(db.String(), nullable=False)
+    authorNum = db.Column(db.String(), primary_key=True)
     born = db.Column(db.String(), nullable=True)
     died = db.Column(db.String(), nullable=True)
     nationality = db.Column(db.String(), nullable=True)
@@ -49,6 +50,7 @@ class Author(db.Model):
 class Publisher(db.Model):
     __tablename__ = 'publishers'
     google_id = db.Column(db.String(), primary_key=True)
+    title = db.Column(db.String(), nullable=True)
     bookNum = db.Column(db.String(), nullable=False)
     authorNum = db.Column(db.String(), nullable=False)
     author = db.Column(db.String(), nullable=True)

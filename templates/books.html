@@ -72,7 +72,7 @@
                     {% set bookset_counter.a = bookset_counter.a + 1 %}
                     {% endif %}
                     {% if counter.a < 12 %}
-                    <div id="book_{{i.bookNum}}"
+                    <div id="book_{{loop.index}}"
                         class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
                         <div class="card" style="width:12em">
                             <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     {% else %}
-                    <div id="book_{{i.bookNum}}"
+                    <div id="book_{{loop.index}}"
                         class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
                         <div class="card" style="width:12em">
                             <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
