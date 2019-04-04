@@ -54,7 +54,7 @@ class Publisher(db.Model):
     bookNum = db.Column(db.String(), nullable=False)
     authorNum = db.Column(db.String(), nullable=False)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), nullable=False)
     publisher = db.Column(db.String(), nullable=True)
     parent_company = db.Column(db.String(), nullable=True)
     owner = db.Column(db.String(), nullable=True)
