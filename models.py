@@ -1,9 +1,6 @@
-# beginning of models.py
-# note that at this point you should have created "bookdb" database (see install_postgres.txt).
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
@@ -54,7 +51,7 @@ class Publisher(db.Model):
     bookNum = db.Column(db.String(), nullable=False)
     authorNum = db.Column(db.String(), nullable=False)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.Integer(), nullable=False)
+    publisherNum = db.Column(db.String(), nullable=False)
     publisher = db.Column(db.String(), nullable=True)
     parent_company = db.Column(db.String(), nullable=True)
     owner = db.Column(db.String(), nullable=True)
@@ -68,4 +65,3 @@ class Publisher(db.Model):
 
 db.drop_all()
 db.create_all()
-# End of models.py
