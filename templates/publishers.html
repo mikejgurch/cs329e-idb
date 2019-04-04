@@ -53,6 +53,12 @@
     </nav>
 
     <!--Content-->
+    <!--buttons for sorting-->
+    <div class="sortButtons">
+            <button id="desc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('publishers_desc')}}';">Sort by descending</button>
+            <button id="asc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('publishers_asc')}}';">Sort by ascending</button>
+            <button id="reset" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('publishers')}}';">Reset</button>
+    </div>
     <main>
         <div class="container">
             <div class="row">
