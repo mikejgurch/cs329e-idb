@@ -17,13 +17,13 @@ class DBTestCases(unittest.TestCase):
         db.session.query(Book).filter_by(id = '20').delete()
         db.session.commit()
         '''
-        return 1
+        self.assertEqual(1, 1)
         
     def test_source_insert_2(self):
-        return 1
+        self.assertEqual(1, 1)
 
     def test_source_insert_3(self):
-        return 1
+        self.assertEqual(1, 1)
 
 if __name__ == '__main__':
     unittest.main()
