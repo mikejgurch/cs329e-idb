@@ -27,7 +27,6 @@ class Book(db.Model):
 
 class Author(db.Model):
     __tablename__ = 'authors'
-    google_id = db.Column(db.String(), nullable=False)
     title = db.Column(db.String(), nullable=True)
     bookNum = db.Column(db.Integer(), nullable=False)
     authorNum = db.Column(db.Integer(), primary_key=True)
@@ -46,7 +45,6 @@ class Author(db.Model):
 
 class Publisher(db.Model):
     __tablename__ = 'publishers'
-    google_id = db.Column(db.String(), nullable=False)
     title = db.Column(db.String(), nullable=True)
     bookNum = db.Column(db.Integer(), nullable=False)
     authorNum = db.Column(db.Integer(), nullable=False)
