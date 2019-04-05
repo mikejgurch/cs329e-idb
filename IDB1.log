@@ -1,3 +1,53 @@
+commit 8683dace6f336ee09ac7edfee1ad81b1b441e7a6
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 3 22:47:21 2019 -0500
+
+    completed prototyping for the unit tests
+
+commit faff79e3324f949a6deead9197ef318ec6b101de
+Merge: 756dfed 663b1a6
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 3 22:14:35 2019 -0500
+
+    resolve conflict
+
+commit 756dfedd83717d1683422a771209489b17d31dae
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 3 22:12:24 2019 -0500
+
+    prototyping unit test output
+
+commit 663b1a655eee035a50bac5db35ff944e0aae9eb6
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 3 15:08:57 2019 -0500
+
+    Fixed repeating authors and publishers on webpages. Closes #28.
+
+commit ffaf834a343f70e26bc54d256e62a81ab0671915
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 3 12:11:35 2019 -0500
+
+    Fixed all books, author, and publisher links on authors & publishers pages. Closes #26.
+
+commit 924f32ef34198f7bc4a19619ab369f04a913ce9a
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Wed Apr 3 12:02:43 2019 -0500
+
+    Authors page now displays correct id in URL. Fixes #27.
+
+commit f0408832ccbf9e6b627dc1e491831e43093a8966
+Merge: 4be5272 4fcbb79
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Wed Apr 3 11:56:07 2019 -0500
+
+    Merge branch 'dev' of gitlab.com:codingking5/cs329e-idb into dev
+
+commit 4be5272b29db83c49699accf5f5c9333ab2821a1
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Wed Apr 3 11:55:10 2019 -0500
+
+    Updated publishers page to be paginated
+
 commit 4fcbb795b141d32d0ec9f7f45a637b4f5187d88f
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Wed Apr 3 02:47:18 2019 -0500

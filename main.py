@@ -94,7 +94,7 @@ def publisherInfo(publisherID):
             return render_template('publisherInfo.html', bookList=bookList, authorList=authorList, publishers=publishers, i=i)
 
 import subprocess
-@app.route('/test/')
+@app.route('/test')
 def test():
     p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
             stdout=subprocess.PIPE,
@@ -103,7 +103,7 @@ def test():
     out, err = p.communicate()
     output=err+out
     output = output.decode("utf-8") #convert from byte type to string type
-
+    
     return render_template('test.html', output = output)
 
 if __name__ == "__main__":
