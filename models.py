@@ -12,10 +12,10 @@ db = SQLAlchemy(app)
 class Book(db.Model):
     __tablename__ = 'books'
     google_id = db.Column(db.String(), primary_key=True)
-    bookNum = db.Column(db.String(), nullable=False)
-    authorNum = db.Column(db.String(), nullable=False)
+    bookNum = db.Column(db.Integer(), nullable=False)
+    authorNum = db.Column(db.Integer(), nullable=False)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), nullable=False)
     publisher = db.Column(db.String(), nullable=True)
     title = db.Column(db.String(), nullable=True)
     subtitle = db.Column(db.String(), nullable=True)
