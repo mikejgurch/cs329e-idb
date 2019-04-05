@@ -1,9 +1,6 @@
-# beginning of models.py
-# note that at this point you should have created "bookdb" database (see install_postgres.txt).
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
@@ -15,10 +12,10 @@ db = SQLAlchemy(app)
 class Book(db.Model):
     __tablename__ = 'books'
     google_id = db.Column(db.String(), primary_key=True)
-    bookNum = db.Column(db.String(), nullable=False)
-    authorNum = db.Column(db.String(), nullable=False)
+    bookNum = db.Column(db.Integer(), nullable=False)
+    authorNum = db.Column(db.Integer(), nullable=False)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), nullable=False)
     publisher = db.Column(db.String(), nullable=True)
     title = db.Column(db.String(), nullable=True)
     subtitle = db.Column(db.String(), nullable=True)
@@ -30,10 +27,10 @@ class Book(db.Model):
 
 class Author(db.Model):
     __tablename__ = 'authors'
-    google_id = db.Column(db.String(), primary_key=True)
+    google_id = db.Column(db.String(), nullable=False)
     title = db.Column(db.String(), nullable=True)
-    bookNum = db.Column(db.String(), nullable=False)
-    authorNum = db.Column(db.String(), primary_key=True)
+    bookNum = db.Column(db.Integer(), nullable=False)
+    authorNum = db.Column(db.Integer(), primary_key=True)
     born = db.Column(db.String(), nullable=True)
     died = db.Column(db.String(), nullable=True)
     nationality = db.Column(db.String(), nullable=True)
@@ -43,18 +40,18 @@ class Author(db.Model):
     image_url = db.Column(db.String(), nullable=True)
     description = db.Column(db.String(), nullable=True)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), nullable=False)
     publisher = db.Column(db.String(), nullable=True)
 
 
 class Publisher(db.Model):
     __tablename__ = 'publishers'
-    google_id = db.Column(db.String(), primary_key=True)
+    google_id = db.Column(db.String(), nullable=False)
     title = db.Column(db.String(), nullable=True)
-    bookNum = db.Column(db.String(), nullable=False)
-    authorNum = db.Column(db.String(), nullable=False)
+    bookNum = db.Column(db.Integer(), nullable=False)
+    authorNum = db.Column(db.Integer(), nullable=False)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), primary_key=True)
     publisher = db.Column(db.String(), nullable=True)
     parent_company = db.Column(db.String(), nullable=True)
     owner = db.Column(db.String(), nullable=True)
@@ -68,4 +65,3 @@ class Publisher(db.Model):
 
 db.drop_all()
 db.create_all()
-# End of models.py

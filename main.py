@@ -8,6 +8,7 @@
 from flask import Flask, render_template
 from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
+from sqlalchemy import desc, asc
 
 #app = Flask(__name__)
 
@@ -22,16 +23,66 @@ def books():
     books = db.session.query(Book).all()
     return render_template('books.html', books=books)
 
+# app route to sort books in desc order
+
+
+@app.route('/books_desc/')
+def books_desc():
+    books = db.session.query(Book).order_by(desc(Book.title)).all()
+    return render_template('books.html', books=books)
+
+# app route to sort books in asc order
+
+
+@app.route('/books_asc/')
+def books_asc():
+    books = db.session.query(Book).order_by(asc(Book.title)).all()
+    return render_template('books.html', books=books)
+
 
 @app.route('/authors/')
 def authors():
     authors = db.session.query(Author).distinct(Author.author)
     return render_template('authors.html', authors=authors)
 
+# app route to sort authors in desc order
+
+
+@app.route('/authors_desc/')
+def authors_desc():
+    authors = db.session.query(Author).order_by(desc(Author.author)).distinct(Author.author)
+    return render_template('authors.html', authors=authors)
+
+# app route to sort authors in asc order
+
+
+@app.route('/authors_asc/')
+def authors_asc():
+    authors = db.session.query(Author).order_by(asc(Author.author)).distinct(Author.author)
+    return render_template('authors.html', authors=authors)
+
 
 @app.route('/publishers/')
 def publishers():
-    publishers = db.session.query(Publisher).distinct(Publisher.author)
+    publishers = db.session.query(Publisher).distinct(Publisher.publisher)
+    return render_template('publishers.html', publishers=publishers)
+
+# app route to sort publishers in desc order
+
+
+@app.route('/publishers_desc/')
+def publishers_desc():
+    publishers = db.session.query(Publisher).order_by(
+        desc(Publisher.publisher)).distinct(Publisher.publisher)
+    return render_template('publishers.html', publishers=publishers)
+
+# app route to sort publishers in asc order
+
+
+@app.route('/publishers_asc/')
+def publishers_asc():
+    publishers = db.session.query(Publisher).order_by(
+        asc(Publisher.publisher)).distinct(Publisher.publisher)
     return render_template('publishers.html', publishers=publishers)
 
 
@@ -93,13 +144,14 @@ def publisherInfo(publisherID):
                     authorList.append(k)
             return render_template('publisherInfo.html', bookList=bookList, authorList=authorList, publishers=publishers, i=i)
 
+
 import subprocess
 @app.route('/test')
 def test():
     p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            stdin=subprocess.PIPE)
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE,
+                         stdin=subprocess.PIPE)
     out, err = p.communicate()
     output=err+out
     output = output.decode("utf-8") #convert from byte type to string type
