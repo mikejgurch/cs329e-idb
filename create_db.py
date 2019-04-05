@@ -1,6 +1,6 @@
 import json
 from models import db, Book, Author, Publisher
-import sys
+
 
 def load_json(filename):
     with open(filename) as file:
@@ -58,37 +58,9 @@ def create_books(authorDict, publisherDict, bookDict):
         image_url = oneBook.get('image_url')
         description = oneBook.get('description')
 
-        newBook = Book(
-            bookNum=bookNum, 
-            authorNum=authorNum, 
-            publisherNum=publisherNum, 
-            title=title, 
-            subtitle=subtitle, 
-            author=author,
-            publisher=publisher, 
-            publication_date=publication_date, 
-            isbn=isbn, 
-            google_id=google_id, 
-            image_url=image_url, 
-            description=description)
-        
-        '''
-        print(
-            'bookNum = "' + str(bookNum) + '"', ", \n", 
-            'authorNum= "' + str(authorNum) + '"', ", \n",
-            'publisherNum= "' + str(publisherNum) + '"', ", \n",
-            'title= "' + str(title) + '"', ", \n",
-            'subtitle= "' + str(subtitle) + '"', ", \n",
-            'author= "' + str(author) + '"', ", \n",
-            'publisher= "' + str(publisher) + '"', ", \n",
-            'publication_date= "' + str(publication_date) + '"', ", \n",
-            'isbn= "' + str(isbn) + '"', ", \n",
-            'google_id= "' + str(google_id) + '"', ", \n",
-            'image_url= "' + str(image_url) + '"', ", \n",
-            'description= "' + str(description) + '"', "\n---------------------------------------------",
-        )
-        '''
-        
+        newBook = Book(bookNum=bookNum, authorNum=authorNum, publisherNum=publisherNum, title=title, subtitle=subtitle, author=author,
+                       publisher=publisher, publication_date=publication_date, isbn=isbn, google_id=google_id, image_url=image_url, description=description)
+
         db.session.add(newBook)
         db.session.commit()
 
@@ -118,42 +90,8 @@ def create_authors(authorDict, publisherDict, bookDict):
                 image_url = oneAuthor.get('image_url')
                 description = oneAuthor.get('description')
 
-                newAuthor = Author(
-                    bookNum=bookNum, 
-                    title=title, 
-                    authorNum=authorNum, 
-                    publisherNum=publisherNum, 
-                    author=author, 
-                    google_id=google_id, 
-                    publisher=publisher, 
-                    born=born, 
-                    died=died,
-                    nationality=nationality, 
-                    education=education, 
-                    alma_mater=alma_mater, 
-                    wikipedia_url=wikipedia_url, 
-                    image_url=image_url, 
-                    description=description)
-
-                '''
-                print(
-                    'bookNum = "' + str(bookNum) + '"', ", \n", 
-                    'title= "' + str(title) + '"', ", \n",
-                    'authorNum= "' + str(authorNum) + '"', ", \n",
-                    'publisherNum= "' + str(publisherNum) + '"', ", \n",
-                    'author= "' + str(author) + '"', ", \n",
-                    'google_id= "' + str(google_id) + '"', ", \n",
-                    'publisher= "' + str(publisher) + '"', ", \n",
-                    'born= "' + str(born) + '"', ", \n",
-                    'died= "' + str(died) + '"', ", \n",
-                    'nationality= "' + str(nationality) + '"', ", \n",
-                    'education= "' + str(education) + '"', ", \n",
-                    'alma_mater= "' + str(alma_mater) + '"', ", \n",
-                    'wikipedia_url= "' + str(wikipedia_url) + '"', ", \n",
-                    'image_url= "' + str(image_url) + '"', ", \n",
-                    'description= "' + str(description) + '"', "\n---------------------------------------------",
-                )
-                '''
+                newAuthor = Author(bookNum=bookNum, title=title, authorNum=authorNum, publisherNum=publisherNum, author=author, publisher=publisher, born=born, died=died,
+                                   nationality=nationality, education=education, alma_mater=alma_mater, wikipedia_url=wikipedia_url, image_url=image_url, description=description)
 
                 db.session.add(newAuthor)
                 db.session.commit()
@@ -162,7 +100,6 @@ def create_authors(authorDict, publisherDict, bookDict):
 def create_publishers(authorDict, publisherDict, bookDict):
     book = load_json('books.json')
     publishersList = []
-
     for oneBook in book:
         for onePublisher in oneBook['publishers']:
             title = oneBook['title']
@@ -186,28 +123,8 @@ def create_publishers(authorDict, publisherDict, bookDict):
                 description = onePublisher.get('description')
 
                 newPublisher = Publisher(bookNum=bookNum, title=title, authorNum=authorNum, publisherNum=publisherNum, publisher=publisher, parent_company=parent_company, owner=owner,
-                                         location=location, founded=founded, google_id=google_id, author=author, wikipedia_url=wikipedia_url, description=description, website=website, image_url=image_url)
+                                         location=location, founded=founded, author=author, wikipedia_url=wikipedia_url, description=description, website=website, image_url=image_url)
 
-                #send publisher to terminal for easy production of tests
-                '''
-                print(
-                    'bookNum = "' + str(bookNum) + '"', ", \n", 
-                    'title= "' + str(title) + '"', ", \n",
-                    'authorNum= "' + str(authorNum) + '"', ", \n",
-                    'publisherNum= "' + str(publisherNum) + '"', ", \n",
-                    'publisher= "' + str(publisher) + '"', ", \n",
-                    'parent_company= "' + str(parent_company) + '"', ", \n",
-                    'owner= "' + str(owner) + '"', ", \n",
-                    'location= "' + str(location) + '"', ", \n",
-                    'founded= "' + str(founded)+ '"', ", \n",
-                    'google_id= "' + str(google_id) + '"', ", \n",
-                    'author= "' + str(author) + '"', ", \n",
-                    'wikipedia_url= "' + str(wikipedia_url) + '"', ", \n",
-                    'description= "' + str(description) + '"', ", \n",
-                    'website= "' + str(website) + '"', ", \n", 
-                    'image_url= "' + str(image_url) + '"', "\n --------------------------------------------------------------"
-                )
-                '''
                 db.session.add(newPublisher)
                 db.session.commit()
 
