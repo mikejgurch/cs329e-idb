@@ -68,33 +68,34 @@
 
     <!--Footer-->
     <footer class="footer bg-light">
-            <div class="container">
-                <div class="row text-center d-flex justify-content-center pt-4">
-                    <div class="col-lg h-100 text-center text-lg-center my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item">
-                                <a href="{{url_for('about')}}">About</a>
-                            </li>
-                            <li class="list-inline-item">&sdot;</li>
-                            <li class="list-inline-item">
-                                <a href="{{url_for('terms')}}">Terms of Use</a>
-                            </li>
-                            <li class="list-inline-item">&sdot;</li>
-                            <li class="list-inline-item">
-                                <a href="{{url_for('privacy')}}">Privacy Policy</a>
-                            </li>
-                        </ul>
-                        <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
-                        <script>
-                            window.addEventListener("load", function() {
-                                currentDate();
-                                currentYear();
-                            });
-                        </script>
-                    </div>
+        <div class="container">
+            <div class="row text-center d-flex justify-content-center pt-4">
+                <div class="col-lg h-100 text-center text-lg-center my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="{{url_for('about')}}">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="{{url_for('terms')}}">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="{{url_for('privacy')}}">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
+                    <script>
+                        window.addEventListener("load", function() {
+                            currentDate();
+                            currentYear();
+                        });
+                    </script>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
+
 </html>

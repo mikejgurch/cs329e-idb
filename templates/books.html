@@ -9,17 +9,13 @@
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <!--Custom CSS-->
@@ -58,64 +54,55 @@
     <main>
         <main>
             <!--buttons for sorting-->
-            <div class="sortButtons">
-                <button id="desc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('books_desc')}}';">Sort by descending</button>
-                <button id="asc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('books_asc')}}';">Sort by ascending</button>
-                <button id="reset" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('books')}}';">Reset</button>
-            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
                         <h1 class="mb-3"> Books </h1>
                     </div>
                 </div>
+                <div class="row text-center mb-3">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                        <button id="desc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('books_desc')}}';">Sort Z-A</button> &emsp;
+                        <button id="asc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('books_asc')}}';">Sort A-Z</button> &emsp;
+                        <button id="reset" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('books')}}';">Reset</button>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
                 <div class="row">
                     <!-- added jinja for sort buttons-->
-                    {% set counter = namespace(a=0) %}
-                    {% set bookset_counter = namespace(a=0) %}
-                    {% for i in books %}
-                    {% if counter.a % 12 == 0 %}
-                    {% set bookset_counter.a = bookset_counter.a + 1 %}
-                    {% endif %}
-                    {% if counter.a < 12 %}
-                    <div id="book_{{loop.index}}"
-                        class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
+                    {% set counter = namespace(a=0) %} {% set bookset_counter = namespace(a=0) %} {% for i in books %} {% if counter.a % 12 == 0 %} {% set bookset_counter.a = bookset_counter.a + 1 %} {% endif %} {% if counter.a
+                    < 12 %} <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
                         <div class="card" style="width:12em">
                             <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
                                 <img class="card-img-top img-fluid" src="{{i.image_url}}"
                                     style="width:200px; height:250px; display:block; margin:auto">
                             </a>
                         </div>
-                    </div>
-                    {% else %}
-                    <div id="book_{{loop.index}}"
-                        class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
-                        <div class="card" style="width:12em">
-                            <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
+                </div>
+                {% else %}
+                <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
+                    <div class="card" style="width:12em">
+                        <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
                                 <img class="card-img-top img-fluid" src="{{i.image_url}}"
                                     style="width:200px; height:250px; display:block; margin:auto">
                             </a>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% set counter.a = counter.a + 1 %}
-                    {% endfor %}
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <ul class="pagination justify-content-center">
-                            {% for i in range((counter.a // 12) + 1) %}
-                            {% if i == 0 %}
-                            <li id="bookpage_1" class="page-item active"><a class="page-link" href="#bookpage_1"
-                                    onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
-                            {% else %}
-                            <li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link"
-                                    href="#bookpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
                     </div>
                 </div>
+                {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul class="pagination justify-content-center">
+                        {% for i in range((counter.a // 12) + 1) %} {% if i == 0 %}
+                        <li id="bookpage_1" class="page-item active"><a class="page-link" href="#bookpage_1" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
+                        {% else %}
+                        <li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link" href="#bookpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
+                        {% endif %} {% endfor %}
+                    </ul>
+                </div>
+            </div>
             </div>
         </main>
 
@@ -138,10 +125,9 @@
                             </li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span
-                                id="currentYear">2019</span>. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
                         <script>
-                            window.addEventListener("load", function () {
+                            window.addEventListener("load", function() {
                                 currentDate();
                                 currentYear();
                                 showBooksInitial();
