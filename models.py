@@ -30,7 +30,7 @@ class Author(db.Model):
     google_id = db.Column(db.String(), primary_key=True)
     title = db.Column(db.String(), nullable=True)
     bookNum = db.Column(db.Integer(), nullable=False)
-    authorNum = db.Column(db.Integer(), primary_key=True)
+    authorNum = db.Column(db.Integer(), nullable=False)
     born = db.Column(db.String(), nullable=True)
     died = db.Column(db.String(), nullable=True)
     nationality = db.Column(db.String(), nullable=True)
