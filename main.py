@@ -8,7 +8,7 @@
 from flask import Flask, render_template
 from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
-from sqlalchemy import  desc, asc 
+from sqlalchemy import desc, asc
 
 #app = Flask(__name__)
 
@@ -24,16 +24,21 @@ def books():
     return render_template('books.html', books=books)
 
 # app route to sort books in desc order
+
+
 @app.route('/books_desc/')
 def books_desc():
     books = db.session.query(Book).order_by(desc(Book.title)).all()
     return render_template('books.html', books=books)
 
 # app route to sort books in asc order
+
+
 @app.route('/books_asc/')
 def books_asc():
     books = db.session.query(Book).order_by(asc(Book.title)).all()
     return render_template('books.html', books=books)
+
 
 @app.route('/authors/')
 def authors():
@@ -41,12 +46,16 @@ def authors():
     return render_template('authors.html', authors=authors)
 
 # app route to sort authors in desc order
+
+
 @app.route('/authors_desc/')
 def authors_desc():
     authors = db.session.query(Author).order_by(desc(Author.author)).distinct(Author.author)
     return render_template('authors.html', authors=authors)
 
 # app route to sort authors in asc order
+
+
 @app.route('/authors_asc/')
 def authors_asc():
     authors = db.session.query(Author).order_by(asc(Author.author)).distinct(Author.author)
@@ -59,16 +68,23 @@ def publishers():
     return render_template('publishers.html', publishers=publishers)
 
 # app route to sort publishers in desc order
+
+
 @app.route('/publishers_desc/')
 def publishers_desc():
-    publishers = db.session.query(Publisher).order_by(desc(Publisher.publisher)).distinct(Publisher.publisher)
+    publishers = db.session.query(Publisher).order_by(
+        desc(Publisher.publisher)).distinct(Publisher.publisher)
     return render_template('publishers.html', publishers=publishers)
 
 # app route to sort publishers in asc order
+
+
 @app.route('/publishers_asc/')
 def publishers_asc():
-    publishers = db.session.query(Publisher).order_by(asc(Publisher.publisher)).distinct(Publisher.publisher)
+    publishers = db.session.query(Publisher).order_by(
+        asc(Publisher.publisher)).distinct(Publisher.publisher)
     return render_template('publishers.html', publishers=publishers)
+
 
 @app.route('/about/')
 def about():
@@ -88,7 +104,7 @@ def privacy():
 @app.route('/bookInfo/<bookID>')
 def bookInfo(bookID):
     book_id = str(bookID)
-    books = db.session.query(Book).all().order_by(desc(Book.title))
+    books = db.session.query(Book).all()
     for i in books:
         if (book_id == str(i.bookNum)):
             bookList = [j for j in books if i.authorNum == j.authorNum]
