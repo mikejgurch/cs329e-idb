@@ -27,10 +27,10 @@ class Book(db.Model):
 
 class Author(db.Model):
     __tablename__ = 'authors'
-    google_id = db.Column(db.String(), primary_key=True)
+    google_id = db.Column(db.String(), nullable=False)
     title = db.Column(db.String(), nullable=True)
-    bookNum = db.Column(db.String(), nullable=False)
-    authorNum = db.Column(db.String(), primary_key=True)
+    bookNum = db.Column(db.Integer(), nullable=False)
+    authorNum = db.Column(db.Integer(), primary_key=True)
     born = db.Column(db.String(), nullable=True)
     died = db.Column(db.String(), nullable=True)
     nationality = db.Column(db.String(), nullable=True)
@@ -40,18 +40,18 @@ class Author(db.Model):
     image_url = db.Column(db.String(), nullable=True)
     description = db.Column(db.String(), nullable=True)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), nullable=False)
     publisher = db.Column(db.String(), nullable=True)
 
 
 class Publisher(db.Model):
     __tablename__ = 'publishers'
-    google_id = db.Column(db.String(), primary_key=True)
+    google_id = db.Column(db.String(), nullable=False)
     title = db.Column(db.String(), nullable=True)
-    bookNum = db.Column(db.String(), nullable=False)
-    authorNum = db.Column(db.String(), nullable=False)
+    bookNum = db.Column(db.Integer(), nullable=False)
+    authorNum = db.Column(db.Integer(), nullable=False)
     author = db.Column(db.String(), nullable=True)
-    publisherNum = db.Column(db.String(), nullable=False)
+    publisherNum = db.Column(db.Integer(), primary_key=True)
     publisher = db.Column(db.String(), nullable=True)
     parent_company = db.Column(db.String(), nullable=True)
     owner = db.Column(db.String(), nullable=True)
