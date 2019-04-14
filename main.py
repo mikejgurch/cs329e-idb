@@ -10,7 +10,7 @@ from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
 from sqlalchemy import desc, asc
 
-#app = Flask(__name__)
+# app = Flask(__name__)
 
 
 @app.route('/')
@@ -146,22 +146,27 @@ def publisherInfo(publisherID):
 
 
 import subprocess
-@app.route('/test')
+
+
+@app.route('/about/test')
 def test():
-    p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
+    '''p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE,
                          stdin=subprocess.PIPE)
     out, err = p.communicate()
     output=err+out
-    output = output.decode("utf-8") #convert from byte type to string type
-    
-    return render_template('test.html', output = output)
+    output = output.decode("utf-8") #convert from byte type to string type'''
+
+    return render_template('test.html')
+
 
 if __name__ == "__main__":
     app.run()
 # end of main3.py
 '''
+
+
 from flask import Flask, render_template
 
 # create a flask object (flask needs an object to represent the application)
@@ -179,16 +184,24 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+
 '''
 '''
+
+
 @app.route('/books/')
 def books():
     return render_template('books.html')
+
+
 '''
 '''
+
+
 @app.route('/books/')
 def books():
     return render_template('books.html')
+
 
 @app.route('/authors/')
 def authors():
@@ -204,9 +217,11 @@ def publishers():
 def about():
     return render_template('about.html')
 
+
 @app.route('/terms/')
 def terms():
     return render_template('termsofuse.html')
+
 
 @app.route('/privacy/')
 def privacy():
@@ -217,13 +232,16 @@ def privacy():
 
 # Books:
 
+
 @app.route('/books/HPSorcererStone/')
 def HPSorcererStone():
     return render_template('HPSorcererStone.html')
 
+
 @app.route('/books/AnimalFarm/')
 def AnimalFarm():
     return render_template('AnimalFarm.html')
+
 
 @app.route('/books/ToKillaMockingBird/')
 def TKMB():
@@ -231,13 +249,16 @@ def TKMB():
 
 # Authors:
 
+
 @app.route('/authors/JKRowling')
 def JKRowling():
     return render_template('JKRowling.html')
 
+
 @app.route('/authors/GeorgeOrwell')
 def GeorgeOrwell():
     return render_template('GeorgeOrwell.html')
+
 
 @app.route('/authors/HarperLee/')
 def HarperLee():
@@ -245,13 +266,16 @@ def HarperLee():
 
 # Publishers:
 
+
 @app.route('/publishers/Pottermore')
 def Pottermore():
     return render_template('Pottermore.html')
 
+
 @app.route('/publishers/ScholasticCo/')
 def ScholasticCo():
     return render_template('ScholasticCo.html')
+
 
 @app.route('/publishers/HarperCollins/')
 def HarperCollins():
