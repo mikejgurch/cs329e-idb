@@ -108,7 +108,7 @@
             <div class="row">
                 {% for j in publisherList %}
                 <div class="col-4 mb-2">
-                    <a href="{{url_for('publisherInfo', publisherID = j.publisherNum)}}" class="pl-5" style="color: inherit; font-size:16pt">{{j.publisher}}</a> </h3>
+                    <a href="{{url_for('publisherInfo', publisherID = j.publisherNum)}}" class="pl-5" style="font-size:16pt">{{j.publisher}}</a> </h3>
                 </div>{% endfor %}
             </div>
             <br />
