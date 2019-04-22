@@ -79,11 +79,13 @@ def publishers_desc():
 
 # app route to sort publishers in asc order
 
+
 @app.route('/searchBooks/')
 def search_books():
     #books = db.session.query.filter(Note.message.like("%harry potter%")).all()
-    # sample input, once linked to front end change harry potter to approriate variable 
+    # sample input, once linked to front end change harry potter to approriate variable
     books = db.session.query.filter(Book.title.like("%harry potter%"))
+
 
 @app.route('/searchAuthors/')
 def search_authors():
@@ -98,14 +100,27 @@ def search_authors():
 #     publishers = db.session.query(user_search).all()#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
 #     return render_template('dummy.html', publishers=publishers)
 
+
+@app.route('/dummy/')
+def dummy():
+    return render_template('dummy.html')
+
+
 @app.route('/search/', methods=['GET', 'POST'])
 def search_all():
-    results = []
-    if "Ok" in request.form.values():
-        user_search = request.form['user_search']
-        #publishers = db.session.query.filter(Publisher.publisher.like("%" + user_search + "%")).all()
-        results.append(db.session.query(user_search).all())#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
-    return render_template('dummy.html', results=results)
+    # if "Ok" in request.form.values():
+    user_search = request.form['user_search']
+    #publishers = db.session.query.filter(Publisher.publisher.like("%" + user_search + "%")).all()
+    books = db.session.query(Book).all()
+    authors = db.session.query(Author).all()
+    publishers = db.session.query(Publisher).all()
+
+    bookResults = []
+    for i in books:
+        if str(user_search).lower() in str(i.title).lower():
+            bookResults.append(i)
+        # results.append(db.session.query(user_search).all())#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
+    return render_template('dummy.html', books=books, bookResults=bookResults)
 
 
 @app.route('/publishers_asc/')
@@ -175,6 +190,8 @@ def publisherInfo(publisherID):
 
 
 import subprocess
+
+
 @app.route('/test')
 def test():
     p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
@@ -182,10 +199,11 @@ def test():
                          stderr=subprocess.PIPE,
                          stdin=subprocess.PIPE)
     out, err = p.communicate()
-    output=err+out
-    output = output.decode("utf-8") #convert from byte type to string type
-    
-    return render_template('test.html', output = output)
+    output = err+out
+    output = output.decode("utf-8")  # convert from byte type to string type
+
+    return render_template('test.html', output=output)
+
 
 if __name__ == "__main__":
     app.run()
