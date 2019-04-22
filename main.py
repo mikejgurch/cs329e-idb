@@ -5,10 +5,11 @@
 #
 #
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
 from sqlalchemy import desc, asc
+from flask_sqlalchemy import SQLAlchemy
 
 #app = Flask(__name__)
 
@@ -77,6 +78,34 @@ def publishers_desc():
     return render_template('publishers.html', publishers=publishers)
 
 # app route to sort publishers in asc order
+
+@app.route('/searchBooks/')
+def search_books():
+    #books = db.session.query.filter(Note.message.like("%harry potter%")).all()
+    # sample input, once linked to front end change harry potter to approriate variable 
+    books = db.session.query.filter(Book.title.like("%harry potter%"))
+
+@app.route('/searchAuthors/')
+def search_authors():
+    authors = db.session.query.filter(Author.author.like("%J.K. Rowling%"))
+
+# # prototype
+# @app.route('/searchPublishers/', methods=['GET', 'POST'])
+# def search_publishers():
+
+#     user_search = request.form['user_search']
+#     #publishers = db.session.query.filter(Publisher.publisher.like("%" + user_search + "%")).all()
+#     publishers = db.session.query(user_search).all()#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
+#     return render_template('dummy.html', publishers=publishers)
+
+@app.route('/search/', methods=['GET', 'POST'])
+def search_all():
+    results = []
+    if "Ok" in request.form.values():
+        user_search = request.form['user_search']
+        #publishers = db.session.query.filter(Publisher.publisher.like("%" + user_search + "%")).all()
+        results.append(db.session.query(user_search).all())#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
+    return render_template('dummy.html', results=results)
 
 
 @app.route('/publishers_asc/')

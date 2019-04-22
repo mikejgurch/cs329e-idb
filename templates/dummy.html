@@ -1,0 +1,26 @@
+<!-- Type in the following code and save it in the file "book2.html" inside the folder "templates" 
+-->
+<html>
+	<head> </head>
+	<body>
+		<p>This is the books page</b>
+			<!--{{url_for('search_all')}}-->
+		<form action="{{url_for('search_all')}}" method="post">
+				Search: 
+				<input type="text" name="user_search">
+                <input type="submit" value="Ok">
+        </form>
+		<h1>Results</h1>
+		{% if results == [] %}
+			<p>No books exist</p>	
+		{% else %}
+			{% for i in results %}
+				<div> 
+					{{i}}
+					<br/> <br/>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</body>
+</html>
+<!-- end of book2.html -->
