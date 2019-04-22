@@ -5,18 +5,18 @@
 <head> </head>
 
 <body>
-	<p>This is the books page</b>
+	<p>This is the authors page</b>
 		<!--{{url_for('search_all')}}-->
-		<form action="{{url_for('search_all')}}" method="post">
+		<form action="{{url_for('search_bar')}}" method="post">
 			Search:
 			<input type="text" name="user_search">
 			<input type="submit" value="Ok">
 		</form>
-		<h1>Book Results</h1> {% if bookResults == [] %}
-		<p>No books exist</p>
-		{% else %} {% for i in bookResults %}
+		<h1>Author Results</h1> {% if authorResults == [] %}
+		<p>No authors exist</p>
+		{% else %} {% for i in authorResults %}
 		<div>
-			<a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
+			<a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
 								<img class="card-img-top img-fluid" src="{{i.image_url}}"
 									style="width:200px; height:250px; display:block; margin:auto">
 							</a>

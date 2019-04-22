@@ -8,7 +8,7 @@
 from flask import Flask, render_template, request
 from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
-from sqlalchemy import desc, asc
+from sqlalchemy import desc, asc, func
 from flask_sqlalchemy import SQLAlchemy
 
 #app = Flask(__name__)
@@ -87,9 +87,30 @@ def search_books():
     books = db.session.query.filter(Book.title.like("%harry potter%"))
 
 
-@app.route('/searchAuthors/')
-def search_authors():
-    authors = db.session.query.filter(Author.author.like("%J.K. Rowling%"))
+@app.route('/dummy2/')
+def dummy2():
+    return render_template('dummy2.html')
+
+@app.route('/searchBar/', methods=['GET', 'POST'])
+def search_bar():
+    user_search = request.form['user_search']
+    search_in = str(user_search).lower()
+    #authors = db.session.query(Author).all()
+    authorResults = []
+    results = db.session.query(Author).filter(func.lower(Author.author).like("%" + search_in + "%")).from_self()
+    b_results = db.session.query(Book).filter(func.lower(Book.title).like("%" + search_in + "%")).from_self()
+    p_results = db.session.query(Publisher).filter(func.lower(Publisher.publisher).like("%" + search_in + "%")).from_self()
+    for i in results:
+        authorResults.append(i)
+
+    for i in b_results:
+        authorResults.append(i)
+
+    for i in p_results:
+        authorResults.append(i)
+
+    #authorResults.append(results)
+    return render_template('dummy2.html', authors=authors, authorResults=authorResults)
 
 # # prototype
 # @app.route('/searchPublishers/', methods=['GET', 'POST'])
