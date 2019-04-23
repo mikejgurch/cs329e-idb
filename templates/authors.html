@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Authors</title>
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -48,6 +49,10 @@
                     <a class="nav-link" href="{{url_for('about')}}">About</a>
                 </li>
             </ul>
+            <form action="{{url_for('search_bar')}}" method="post">
+                <input type="text" placeholder="Search.." name="user_search" style="width:200px;">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </nav>
 

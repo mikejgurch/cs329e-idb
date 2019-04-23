@@ -77,71 +77,31 @@ def publishers_desc():
         desc(Publisher.publisher)).distinct(Publisher.publisher)
     return render_template('publishers.html', publishers=publishers)
 
-# app route to sort publishers in asc order
-
-
-@app.route('/searchBooks/')
-def search_books():
-    #books = db.session.query.filter(Note.message.like("%harry potter%")).all()
-    # sample input, once linked to front end change harry potter to approriate variable
-    books = db.session.query.filter(Book.title.like("%harry potter%"))
-
-
-@app.route('/dummy2/')
-def dummy2():
-    return render_template('dummy2.html')
 
 @app.route('/searchBar/', methods=['GET', 'POST'])
 def search_bar():
     user_search = request.form['user_search']
     search_in = str(user_search).lower()
-    #authors = db.session.query(Author).all()
+    bookResults = []
     authorResults = []
-    results = db.session.query(Author).filter(func.lower(Author.author).like("%" + search_in + "%")).from_self()
-    b_results = db.session.query(Book).filter(func.lower(Book.title).like("%" + search_in + "%")).from_self()
-    p_results = db.session.query(Publisher).filter(func.lower(Publisher.publisher).like("%" + search_in + "%")).from_self()
-    for i in results:
-        authorResults.append(i)
+    publisherResults = []
+
+    b_results = db.session.query(Book).filter(func.lower(
+        Book.title).like("%" + search_in + "%")).from_self()
+    a_results = db.session.query(Author).filter(func.lower(
+        Author.author).like("%" + search_in + "%")).from_self()
+    p_results = db.session.query(Publisher).filter(func.lower(
+        Publisher.publisher).like("%" + search_in + "%")).from_self()
 
     for i in b_results:
+        bookResults.append(i)
+    for i in a_results:
         authorResults.append(i)
-
     for i in p_results:
-        authorResults.append(i)
+        publisherResults.append(i)
 
-    #authorResults.append(results)
-    return render_template('dummy2.html', authors=authors, authorResults=authorResults)
-
-# # prototype
-# @app.route('/searchPublishers/', methods=['GET', 'POST'])
-# def search_publishers():
-
-#     user_search = request.form['user_search']
-#     #publishers = db.session.query.filter(Publisher.publisher.like("%" + user_search + "%")).all()
-#     publishers = db.session.query(user_search).all()#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
-#     return render_template('dummy.html', publishers=publishers)
-
-
-@app.route('/dummy/')
-def dummy():
-    return render_template('dummy.html')
-
-
-@app.route('/search/', methods=['GET', 'POST'])
-def search_all():
-    # if "Ok" in request.form.values():
-    user_search = request.form['user_search']
-    #publishers = db.session.query.filter(Publisher.publisher.like("%" + user_search + "%")).all()
-    books = db.session.query(Book).all()
-    authors = db.session.query(Author).all()
-    publishers = db.session.query(Publisher).all()
-
-    bookResults = []
-    for i in books:
-        if str(user_search).lower() in str(i.title).lower():
-            bookResults.append(i)
-        # results.append(db.session.query(user_search).all())#.filter(Publisher.publisher.like("%" + user_search + "%")).all()
-    return render_template('dummy.html', books=books, bookResults=bookResults)
+    # authorResults.append(results)
+    return render_template('search.html', user_search=user_search, bookResults=bookResults, authorResults=authorResults, publisherResults=publisherResults)
 
 
 @app.route('/publishers_asc/')

@@ -7,17 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>goodbooksfor.me</title>
     <link rel="shortcut icon" href="/static/rsc/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -51,6 +49,10 @@
                     <a class="nav-link" href="{{url_for('about')}}">About</a>
                 </li>
             </ul>
+            <form action="{{url_for('search_bar')}}" method="post">
+                <input type="text" placeholder="Search.." name="user_search" style="width:200px;">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </nav>
 
@@ -97,8 +99,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p>Our database makes it easy to discover the books you're interested in. Just make sure to
-                                check out our books section to get started!</p>
+                            <p>Our database makes it easy to discover the books you're interested in. Just make sure to check out our books section to get started!</p>
                         </div>
                     </div>
                 </div>
@@ -110,8 +111,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p>Want to learn more about your favorite author? Looking to discover up and coming talent?
-                                Visit the authors page!</p>
+                            <p>Want to learn more about your favorite author? Looking to discover up and coming talent? Visit the authors page!</p>
                         </div>
                     </div>
                 </div>
@@ -123,8 +123,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p>This is a collaborative endeavor as part of a group project. To find out more about who
-                                we are and our mission, read more about us on the about page.</p>
+                            <p>This is a collaborative endeavor as part of a group project. To find out more about who we are and our mission, read more about us on the about page.</p>
                         </div>
                     </div>
                 </div>
@@ -151,10 +150,9 @@
                         </li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
-                        All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
                     <script>
-                        window.addEventListener("load", function () {
+                        window.addEventListener("load", function() {
                             currentDate();
                             currentYear();
                         });
