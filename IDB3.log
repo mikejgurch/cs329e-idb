@@ -1,3 +1,46 @@
+commit b440f0d1327bd6a1aacccc6a695b309ff2b01e6c
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Tue Apr 23 11:13:01 2019 -0500
+
+    minor formatting changes
+
+commit 98051c289fa10887da9d10279fdadb3ef6c9e40c
+Merge: 2a8cf95 7ae098c
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Tue Apr 23 11:10:30 2019 -0500
+
+    adding log and resolving merge conflict
+
+commit 7ae098cc883a019236fb25c2d279e97009b81c23
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Mon Apr 22 19:34:45 2019 -0500
+
+    Fixed formatting of authors in search results
+
+commit 9660af56b801e187c5b59d792b75c72335b5c8b3
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Mon Apr 22 19:27:05 2019 -0500
+
+    First implementation of search page with search results
+
+commit 07d87c57bde837b663329029e2292908ae5c6ce3
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Mon Apr 22 16:45:17 2019 -0500
+
+    Implemented search function
+
+commit a50e877295e3e42243779d2e51196cebec2027cb
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sun Apr 21 21:58:26 2019 -0500
+
+    Tested search function for books in dummy.html
+
+commit eb676c8a379b1ed816fd863a28ca25ab751d0ae8
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Sun Apr 21 20:56:20 2019 -0500
+
+    Search engine still in progress, have a dummy html file to test it
+
 commit 2a8cf95b3e9b5a88b4167091e1ce5aa19fe7e07a
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Tue Apr 16 12:12:57 2019 -0500
