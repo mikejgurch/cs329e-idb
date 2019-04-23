@@ -4,12 +4,8 @@
 # -----------------------------------------
 #
 #
-<<<<<<< HEAD
-from flask import Flask, render_template
-=======
 
 from flask import Flask, render_template, request
->>>>>>> 7ae098cc883a019236fb25c2d279e97009b81c23
 from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
 from sqlalchemy import desc, asc, func
