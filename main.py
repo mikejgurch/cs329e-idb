@@ -5,10 +5,11 @@
 #
 #
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from models import app, db, Book
 from create_db import db, Book, create_books, Author, create_authors, Publisher, create_publishers
-from sqlalchemy import desc, asc
+from sqlalchemy import desc, asc, func
+from flask_sqlalchemy import SQLAlchemy
 
 # app = Flask(__name__)
 
@@ -76,7 +77,31 @@ def publishers_desc():
         desc(Publisher.publisher)).distinct(Publisher.publisher)
     return render_template('publishers.html', publishers=publishers)
 
-# app route to sort publishers in asc order
+
+@app.route('/searchBar/', methods=['GET', 'POST'])
+def search_bar():
+    user_search = request.form['user_search']
+    search_in = str(user_search).lower()
+    bookResults = []
+    authorResults = []
+    publisherResults = []
+
+    b_results = db.session.query(Book).filter(func.lower(
+        Book.title).like("%" + search_in + "%")).from_self()
+    a_results = db.session.query(Author).filter(func.lower(
+        Author.author).like("%" + search_in + "%")).from_self()
+    p_results = db.session.query(Publisher).filter(func.lower(
+        Publisher.publisher).like("%" + search_in + "%")).from_self()
+
+    for i in b_results:
+        bookResults.append(i)
+    for i in a_results:
+        authorResults.append(i)
+    for i in p_results:
+        publisherResults.append(i)
+
+    # authorResults.append(results)
+    return render_template('search.html', user_search=user_search, bookResults=bookResults, authorResults=authorResults, publisherResults=publisherResults)
 
 
 @app.route('/publishers_asc/')
