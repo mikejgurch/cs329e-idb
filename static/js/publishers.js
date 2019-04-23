@@ -1,8 +1,8 @@
-function hideBooks() {
+function hidePublishers() {
     var i = 1;
     while (true) {
-        var book = "book_" + String(i);
-        var x = document.getElementById(book);
+        var publisher = "publisher_" + String(i);
+        var x = document.getElementById(publisher);
         if (!x) {
             break;
         }
@@ -13,11 +13,11 @@ function hideBooks() {
     }
 }
 
-function hideBooksInitial() {
+function hidePublishersInitial() {
     var i = 15;
     while (true) {
-        var book = "book_" + String(i);
-        var x = document.getElementById(book);
+        var publisher = "publisher_" + String(i);
+        var x = document.getElementById(publisher);
         if (!x) {
             break;
         }
@@ -28,35 +28,35 @@ function hideBooksInitial() {
     }
 }
 
-function showBooks(bookset) {
-    hideBooks();
-    toggleActive(bookset);
+function showPublishers(publisherset) {
+    hidePublishers();
+    toggleActive(publisherset);
 
-    var i = Number(bookset * 15 - 14);
-    var j = Number(bookset * 15);
+    var i = Number(publisherset * 15 - 14);
+    var j = Number(publisherset * 15);
     for (i; i <= j; i++) {
-        var book = "book_" + String(i);
-        var x = document.getElementById(book);
+        var publisher = "publisher_" + String(i);
+        var x = document.getElementById(publisher);
         if (!x) {} else {
             x.style.display = "table-cell";
         }
     }
 }
 
-function showBooksInitial() {
-    hideBooksInitial();
-    showBooks("1");
+function showPublishersInitial() {
+    hidePublishersInitial();
+    showPublishers("1");
 }
 
-function toggleActive(current_bookpage) {
+function toggleActive(current_publisherpage) {
     var i = 1;
     while (true) {
-        var bookpage = "bookpage_" + String(i);
-        var element = document.getElementById(bookpage);
+        var publisherpage = "publisherpage_" + String(i);
+        var element = document.getElementById(publisherpage);
         if (!element) {
             break;
         }
-        if (i == current_bookpage) {
+        if (i == current_publisherpage) {
             element.classList.add("active");
         } else {
             element.classList.remove("active");
@@ -65,3 +65,4 @@ function toggleActive(current_bookpage) {
         i++;
     }
 }
+publisher

@@ -26,6 +26,18 @@
     <script src="{{url_for('static', filename='js/footer.js')}}"></script>
     <script src="{{url_for('static', filename='js/books.js')}}"></script>
 
+    <style>
+        .img {
+            position: relative;
+            float: left;
+            width: 205px;
+            height: 250px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -80,27 +92,24 @@
             <div class="row">
                 {% set counter = namespace(a=0) %} {% set bookset_counter = namespace(a=0) %} {% for i in authors %} {% if counter.a % 12 == 0 %} {% set bookset_counter.a = bookset_counter.a + 1 %} {% endif %} {% if counter.a
                 < 12 %} <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
-                    <div class="card p-2" style="width:12em; height:17em;">
+                    <div class="card p-2" style="width:14em; height:18em;">
                         <a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
-                            <img class="card-img-top img-fluid" src="{{i.image_url}}" alt="{{i.author}}"
-                                style="width:100%; height:200px;  display:block; margin:auto">
+                            <div class="img" style="background-image:url('{{i.image_url}}');"></div>
                         </a>
-                        <h5 class="text-center">{{i.author}}</h5><br />
+                        <h5 class="text-center" style="font-size:13pt;">{{i.author}}</h5><br />
                     </div>
             </div>
             {% else %}
             <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
-                <div class="card p-2" style="width:12em; height:17em;">
+                <div class="card p-2" style="width:14em; height:18em;">
                     <a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
-                            <img class="card-img-top img-fluid" src="{{i.image_url}}" alt="{{i.author}}"
-                                style="width:100%; height:200px;  display:block; margin:auto">
-                        </a>
-                    <h5 class="text-center">{{i.author}}</h5><br />
+                        <div class="img" style="background-image:url('{{i.image_url}}');"></div>
+                    </a>
+                    <h5 class="text-center" style="font-size:14pt;">{{i.author}}</h5><br />
                 </div>
             </div>
             {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
         </div>
-
         <div class="row">
             <div class="col">
                 <ul class="pagination justify-content-center">
@@ -115,6 +124,7 @@
 
         </div>
     </main>
+
     <!--Footer-->
     <footer class="footer bg-light">
         <div class="container">
