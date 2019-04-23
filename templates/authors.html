@@ -45,8 +45,7 @@
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{{url_for('index')}}">
-                <img src="/static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp;
-                goodbooksfor.me
+                <img src="/static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
             </a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -82,9 +81,9 @@
                 <div class="col-4">
                 </div>
                 <div class="col-4">
-                    <a id="desc" role="button" class="btn btn-success" href="{{url_for('authors_desc')}}">Sort Z-A</a>
-                    <a id="asc" role="button" class="btn btn-success" href="{{url_for('authors_asc')}}">Sort A-Z</a>
-                    <a id="reset" role="button" class="btn btn-success" href="{{url_for('authors')}}">Reset</a>
+                    <button id="desc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('authors_desc')}}';">Sort Z-A</button> &emsp;
+                    <button id="asc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('authors_asc')}}';">Sort A-Z</button> &emsp;
+                    <button id="reset" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('authors')}}';">Reset</button>
                 </div>
                 <div class="col-4">
 
@@ -108,7 +107,6 @@
                     </a>
                     <h5 class="text-center" style="font-size:14pt;">{{i.author}}</h5><br />
                 </div>
-                {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
             </div>
             {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
         </div>
@@ -122,6 +120,7 @@
                     {% endif %} {% endfor %}
                 </ul>
             </div>
+        </div>
 
         </div>
     </main>
