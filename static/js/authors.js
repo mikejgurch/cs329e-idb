@@ -30,7 +30,7 @@ function hideAuthorsInitial() {
 
 function showAuthors(authorset) {
     hideAuthors();
-    toggleActive(authorset);
+    toggleActiveAuthor(authorset);
 
     var author = "authorset_" + String(authorset);
     var x = document.getElementsByClassName(author);
@@ -46,7 +46,7 @@ function showAuthorsInitial() {
     showAuthors("1");
 }
 
-function toggleActive(current_authorpage) {
+function toggleActiveAuthor(current_authorpage) {
     var i = 1;
     while (true) {
         var authorpage = "authorpage_" + String(i);
