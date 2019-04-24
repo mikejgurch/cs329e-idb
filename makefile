@@ -29,7 +29,10 @@ RunTests.out: test.py
 IDB3.log:
 	git log > IDB3.log
 
-test: IDB3.log RunTests.out
+models.html:
+	$(PYDOC) -w models
+	
+test: models.html IDB3.log RunTests.out
 	 
 TestApp: main.py
 	$(PYTHON) main.py
