@@ -312,8 +312,23 @@ class DBTestCases(unittest.TestCase):
                         publisherList.append(k)
                         self.assertTrue(publishers == ["Bantam Books"])
 
+    # Checks if the author name and publisher are correct for author 6
     def test_authorInfo_3(self):
-        pass
+        author_id = "6"
+        authors = db.session.query(Author).all()
+        books = db.session.query(Book).all()
+        for i in authors:
+            if (author_id == str(i.authorNum)):
+                self.assertTrue(i.author == "Patrick Rothfuss")
+                bookList = [j for j in books if i.authorNum == j.authorNum]
+                publishers = []
+                publisherList = []
+                for k in bookList:
+                    if k.publisher not in publishers:
+                        publishers.append(k.publisher)
+                        publisherList.append(k)
+                        self.assertTrue(publishers == ["Victor Gollancz Ltd"])
+
 
     # Checks if the publisher name and authors are correct for publisher 35
     def test_publisherInfo_1(self):
@@ -333,11 +348,41 @@ class DBTestCases(unittest.TestCase):
                         authorList.append(k)
                         self.assertTrue(authors == ["George Orwell"])
 
+    # Checks if the publisher name and authors are correct for publisher 6
     def test_publisherInfo_2(self):
-        pass
+        publisher_id = "6"
+        publishers = db.session.query(Publisher).all()
+        books = db.session.query(Book).all()
+        for i in publishers:
+            if (publisher_id == str(i.publisherNum)):
+                self.assertTrue(i.publisher == "Victor Gollancz Ltd")
+                bookList = [
+                    j for j in books if i.publisherNum == j.publisherNum]
+                authors = []
+                authorList = []
+                for k in bookList:
+                    if k.author not in authors:
+                        authors.append(k.author)
+                        authorList.append(k)
+                        self.assertTrue(authors == ["George Orwell"])
 
+    # Checks if the publisher name and authors are correct for publisher 18
     def test_publisherInfo_3(self):
-        pass
+        publisher_id = "18"
+        publishers = db.session.query(Publisher).all()
+        books = db.session.query(Book).all()
+        for i in publishers:
+            if (publisher_id == str(i.publisherNum)):
+                self.assertTrue(i.publisher == "Hachette UK")
+                bookList = [
+                    j for j in books if i.publisherNum == j.publisherNum]
+                authors = []
+                authorList = []
+                for k in bookList:
+                    if k.author not in authors:
+                        authors.append(k.author)
+                        authorList.append(k)
+                        self.assertTrue(authors == ["Stieg Larsson"])
 
 
 class SearchTestCases(unittest.TestCase):
