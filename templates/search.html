@@ -97,6 +97,7 @@
 				<br />
 			</div>
 
+			<!--Books Tab-->
 			<div class="tab-content" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="books" role="tabpanel" aria-labelledby="books">
 					{% if bookResults == [] %}
@@ -143,7 +144,7 @@
 					</div>{% endif %}
 				</div>
 
-
+				<!--Authors Tab-->
 				<div class="tab-pane fade" id="authors" role="tabpanel" aria-labelledby="authors">
 					{% if authorResults == [] %}
 					<p>No authors found</p>{% else %}
@@ -190,7 +191,7 @@
 				</div>
 
 
-
+				<!--Publishers Tab-->
 				<div class="tab-pane fade" id="publishers" role="tabpanel" aria-labelledby="publishers">
 					{% if publisherResults == [] %}
 					<p>No publishers found</p>{% else %}
