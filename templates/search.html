@@ -10,23 +10,41 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 	</script>
+
 
 	<!--Custom CSS-->
 	<link rel="stylesheet" href="{{url_for('static', filename='css/sticky-footer.css')}}">
 
 	<!--Custom JS-->
-	<script src="{{url_for('static', filename='js/footer.js')}}"></script>
-	<script src="{{url_for('static', filename='js/books.js')}}"></script>
 
+	<script src="{{url_for('static', filename='js/books.js')}}"></script>
+	<script src="{{url_for('static', filename='js/authors.js')}}"></script>
 	<script src="{{url_for('static', filename='js/publishers.js')}}"></script>
+	<script src="{{url_for('static', filename='js/footer.js')}}"></script>
+
+	<style>
+		.img {
+			position: relative;
+			float: left;
+			width: 205px;
+			height: 250px;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
 </head>
 
 <body>
@@ -34,8 +52,8 @@
 	<nav class="navbar navbar-expand-sm bg-light navbar-light">
 		<div class="container">
 			<a class="navbar-brand" href="{{url_for('index')}}">
-                <img src="/static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
-            </a>
+				<img src="/static/rsc/Logo.png" alt="Logo" style="width: 50px">&nbsp; goodbooksfor.me
+			</a>
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="{{url_for('books')}}">Books</a>
@@ -58,7 +76,6 @@
 	</nav>
 
 	<main>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -68,140 +85,191 @@
 			<div class="row">
 				<nav>
 					<div class="nav nav-tabs" id="nav-tab" role="tablist">
-						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#books" role="tab" aria-controls="books" aria-selected="true">Books</a>
-						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#authors" role="tab" aria-controls="authors" aria-selected="false">Authors</a>
-						<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#publishers" role="tab" aria-controls="publishers" aria-selected="false">Publishers</a>
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#books" role="tab"
+							aria-controls="books" aria-selected="true">Books</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#authors" role="tab"
+							aria-controls="authors" aria-selected="false">Authors</a>
+						<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#publishers"
+							role="tab" aria-controls="publishers" aria-selected="false">Publishers</a>
 					</div>
 				</nav>
 			</div>
 			<div class="row">
 				<br />
 			</div>
+
+			<!--Books Tab-->
 			<div class="tab-content" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="books" role="tabpanel" aria-labelledby="books">
+					{% if bookResults == [] %}
+					<p>No books found</p>{% else %}
 					<div class="row">
 						<!-- added jinja for sort buttons-->
-						{% set counter = namespace(a=0) %} {% set bookset_counter = namespace(a=0) %} {% for i in bookResults %} {% if counter.a % 12 == 0 %} {% set bookset_counter.a = bookset_counter.a + 1 %} {% endif %} {% if counter.a
+						{% set counter = namespace(a=0) %} {% set bookset_counter = namespace(a=0) %}
+						{% for i in bookResults %} {% if counter.a % 12 == 0 %}
+						{% set bookset_counter.a = bookset_counter.a + 1 %} {% endif %} {% if counter.a
 						< 12 %} <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
 							<div class="card" style="width:12em">
 								<a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
-											<img class="card-img-top img-fluid" src="{{i.image_url}}"
-												style="width:200px; height:250px; display:block; margin:auto">
-										</a>
+									<img class="card-img-top img-fluid" src="{{i.image_url}}"
+										style="width:200px; height:250px; display:block; margin:auto">
+								</a>
 							</div>
-					</div>
-					{% else %}
-					<div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
-						<div class="card" style="width:12em">
-							<a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
-												<img class="card-img-top img-fluid" src="{{i.image_url}}"
-													style="width:200px; height:250px; display:block; margin:auto">
-											</a>
 						</div>
-					</div>
-					{% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
-				</div>
-				<div class="row">
-					<div class="col">
-						<ul class="pagination justify-content-center">
-							{% for i in range((counter.a // 12) + 1) %} {% if i == 0 %}
-							<li id="bookpage_1" class="page-item active"><a class="page-link" href="#bookpage_1" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
-							{% else %}
-							<li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link" href="#bookpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
-							{% endif %} {% endfor %}
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="tab-pane fade" id="authors" role="tabpanel" aria-labelledby="authors">
-				<div class="row">
-					{% set counter = namespace(a=0) %} {% set bookset_counter = namespace(a=0) %} {% for i in authorResults %} {% if counter.a % 12 == 0 %} {% set bookset_counter.a = bookset_counter.a + 1 %} {% endif %} {% if counter.a
-					< 12 %} <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
-						<div class="card p-2" style="width:12em; height:17em;">
-							<a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
-                            <img class="card-img-top img-fluid" src="{{i.image_url}}" alt="{{i.author}}"
-                                style="width:100%; height:200px;  display:block; margin:auto">
-                        </a>
-							<h5 class="text-center">{{i.author}}</h5><br />
-						</div>
-				</div>
-				{% else %}
-				<div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
-					<div class="card p-2" style="width:12em; height:17em;">
-						<a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
-                            <img class="card-img-top img-fluid" src="{{i.image_url}}" alt="{{i.author}}"
-                                style="width:100%; height:200px;  display:block; margin:auto">
-                        </a>
-						<h5 class="text-center">{{i.author}}</h5><br />
-					</div>
-				</div>
-				{% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
-			</div>
-
-			<div class="row">
-				<div class="col">
-					<ul class="pagination justify-content-center">
-						{% for i in range((counter.a // 12) + 1) %} {% if i == 0 %}
-						<li id="bookpage_1" class="page-item active"><a class="page-link" href="#authorpage_1" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
 						{% else %}
-						<li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link" href="#authorpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
-						{% endif %} {% endfor %}
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="tab-pane fade" id="publishers" role="tabpanel" aria-labelledby="publishers">
-			<div class="row">
-				<div class="col-12 text-center">
+						<div id="book_{{loop.index}}"
+							class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}"
+							style="display:none">
+							<div class="card" style="width:12em">
+								<a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
+									<img class="card-img-top img-fluid" src="{{i.image_url}}"
+										style="width:200px; height:250px; display:block; margin:auto">
+								</a>
+							</div>
+						</div>
+						{% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
+					</div>
 					<div class="row">
-						<table class="table mt-3">
-							{% set counter = namespace(a=0) %} {% set set_counter = namespace(a=0) %} {% for i in publisherResults %} {% if counter.a == 0 %} {% set set_counter.a = set_counter.a + 1 %} {% endif %} {% if set_counter.a
-							<=5 %} {% if counter.a==0 %} <tr>
-								<td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
-								</td>
-								<!--0-->
-								{% elif counter.a == 2 %}
-								<td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
-								</td>
-								<!--2-->
-								{% set counter.a = -1 %}
-								</tr>
+						<div class="col">
+							<ul class="pagination justify-content-center">
+								{% for i in range((counter.a // 12) + 1) %} {% if i == 0 %}
+								<li id="bookpage_1" class="page-item active"><a class="page-link" href="#bookpage_1"
+										onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
 								{% else %}
-								<td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
-								</td>
-								<!--1-->
-								{% endif %} {% else %} {% if counter.a == 0 %}
-								<tr>
-									<td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
-									</td>
-									<!--0-->
-									{% elif counter.a == 2 %}
-									<td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
-									</td>
-									<!--2-->
-									{% set counter.a = -1 %}
-								</tr>
-								{% else %}
-								<td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
-								</td>
-								<!--1-->
-								{% endif %} {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
-						</table>
-					</div>
+								<li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link"
+										href="#bookpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a>
+								</li>
+								{% endif %} {% endfor %}
+							</ul>
+						</div>
+					</div>{% endif %}
 				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<ul class="pagination justify-content-center">
-						{% for i in range((set_counter.a // 5)) %} {% if i == 0 %}
-						<li id="bookpage_1" class="page-item active"><a class="page-link" href="#publisherpage_1" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
+
+				<!--Authors Tab-->
+				<div class="tab-pane fade" id="authors" role="tabpanel" aria-labelledby="authors">
+					{% if authorResults == [] %}
+					<p>No authors found</p>{% else %}
+					<div class="row">
+						{% set counter = namespace(b=0) %} {% set authorset_counter = namespace(b=0) %}
+						{% for i in authorResults %} {% if counter.b % 12 == 0 %}
+						{% set authorset_counter.b = authorset_counter.b + 1 %} {% endif %} {% if counter.b
+					< 12 %} <div id="author_{{loop.index}}"
+							class="col-12 col-sm-6 col-md-3 pl-5 mb-3 authorset_{{authorset_counter.b}}">
+							<div class="card p-2" style="width:14em; height:18em;">
+								<a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
+									<div class="img" style="background-image:url('{{i.image_url}}');"></div>
+								</a>
+								<h5 class="text-center" style="font-size:13pt;">{{i.author}}</h5><br />
+							</div>
+						</div>
 						{% else %}
-						<li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link" href="#publisherpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
-						{% endif %} {% endfor %}
-					</ul>
+						<div id="author_{{loop.index}}"
+							class="col-12 col-sm-6 col-md-3 pl-5 mb-3 authorset_{{authorset_counter.b}}"
+							style="display:none">
+							<div class="card p-2" style="width:14em; height:18em;">
+								<a href="{{url_for('authorInfo', authorID = i.authorNum)}}">
+									<div class="img" style="background-image:url('{{i.image_url}}');"></div>
+								</a>
+								<h5 class="text-center" style="font-size:13pt;">{{i.author}}</h5><br />
+							</div>
+						</div>
+						{% endif %} {% set counter.b = counter.b + 1 %} {% endfor %}
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="pagination justify-content-center">
+								{% for i in range((counter.b // 12) + 1) %} {% if i == 0 %}
+								<li id="authorpage_1" class="page-item active"><a class="page-link" href="#authorpage_1"
+										onclick="showAuthors(this.innerHTML)">{{i + 1}}</a></li>
+								{% else %}
+								<li id="authorpage_{{i + 1}}" class="page-item"><a class="page-link"
+										href="#authorpage_{{i + 1}}" onclick="showAuthors(this.innerHTML)">{{i + 1}}</a>
+								</li>
+								{% endif %} {% endfor %}
+							</ul>
+						</div>
+					</div>{% endif %}
+				</div>
+
+
+				<!--Publishers Tab-->
+				<div class="tab-pane fade" id="publishers" role="tabpanel" aria-labelledby="publishers">
+					{% if publisherResults == [] %}
+					<p>No publishers found</p>{% else %}
+					<div class="row">
+						<div class="col-12 text-center">
+							<div class="row">
+								<table class="table mt-3">
+									{% set counter = namespace(a=0) %} {% set set_counter = namespace(a=0) %}
+									{% for i in publisherResults %} {% if counter.a == 0 %}
+									{% set set_counter.a = set_counter.a + 1 %} {% endif %} {% if set_counter.a
+									<=5 %} {% if counter.a==0 %} <tr>
+										<td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}"
+											style="width:200px"><a
+												href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+										</td>
+										<!--0-->
+										{% elif counter.a == 2 %}
+										<td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}"
+											style="width:200px"><a
+												href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+										</td>
+										<!--2-->
+										{% set counter.a = -1 %}
+									</tr>
+									{% else %}
+									<td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}"
+										style="width:200px"><a
+											href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+									</td>
+									<!--1-->
+									{% endif %} {% else %} {% if counter.a == 0 %}
+									<tr>
+										<td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}"
+											style="width:200px; display:none"><a
+												href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+										</td>
+										<!--0-->
+										{% elif counter.a == 2 %}
+										<td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}"
+											style="width:200px; display:none"><a
+												href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+										</td>
+										<!--2-->
+										{% set counter.a = -1 %}
+									</tr>
+									{% else %}
+									<td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}"
+										style="width:200px; display:none"><a
+											href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+									</td>
+									<!--1-->
+									{% endif %} {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<ul class="pagination justify-content-center">
+								{% for i in range((set_counter.a // 5)) %} {% if i == 0 %}
+								<li id="publisherpage_1" class="page-item active"><a class="page-link"
+										href="#publisherpage_1" onclick="showPublishers(this.innerHTML)">{{i + 1}}</a>
+								</li>
+								{% else %}
+								<li id="publisherpage_{{i + 1}}" class="page-item"><a class="page-link"
+										href="#publisherpage_{{i + 1}}"
+										onclick="showPublishers(this.innerHTML)">{{i + 1}}</a></li>
+								{% endif %} {% endfor %}
+							</ul>
+						</div>
+					</div>{% endif %}
 				</div>
 			</div>
 		</div>
+
+
+
 		</div>
 	</main>
 
@@ -224,9 +292,10 @@
 						</li>
 					</ul>
 					<p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-					<p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
+					<p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
+						All Rights Reserved.</p>
 					<script>
-						window.addEventListener("load", function() {
+						window.addEventListener("load", function () {
 							currentDate();
 							currentYear();
 							showBooksInitial();

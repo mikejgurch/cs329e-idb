@@ -51,7 +51,8 @@ def authors():
 
 @app.route('/authors_desc/')
 def authors_desc():
-    authors = db.session.query(Author).order_by(desc(Author.author)).distinct(Author.author)
+    authors = db.session.query(Author).order_by(
+        desc(Author.author)).distinct(Author.author)
     return render_template('authors.html', authors=authors)
 
 # app route to sort authors in asc order
@@ -59,7 +60,8 @@ def authors_desc():
 
 @app.route('/authors_asc/')
 def authors_asc():
-    authors = db.session.query(Author).order_by(asc(Author.author)).distinct(Author.author)
+    authors = db.session.query(Author).order_by(
+        asc(Author.author)).distinct(Author.author)
     return render_template('authors.html', authors=authors)
 
 
@@ -169,22 +171,23 @@ def publisherInfo(publisherID):
                     authorList.append(k)
             return render_template('publisherInfo.html', bookList=bookList, authorList=authorList, publishers=publishers, i=i)
 
-
-import subprocess
-
+#import subprocess
 
 @app.route('/about/test')
 def test():
-    '''p = subprocess.Popen(["coverage", "run", "--branch", "test.py"],
-                         stdout=subprocess.PIPE,
-                         stderr=subprocess.PIPE,
-                         stdin=subprocess.PIPE)
+    '''
+    p = subprocess.Popen(
+        ["coverage", "run", "--branch", "test.py"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        stdin=subprocess.PIPE
+    )
+
     out, err = p.communicate()
-    output=err+out
-    output = output.decode("utf-8") #convert from byte type to string type'''
-
-    return render_template('test.html')
-
+    output=err
+    output = output.decode("utf-8") #convert from byte type to string type
+    '''
+    return render_template('test.html')#, output=output)
 
 if __name__ == "__main__":
     app.run()

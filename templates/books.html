@@ -11,7 +11,6 @@
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
@@ -81,18 +80,18 @@
                     < 12 %} <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}">
                         <div class="card" style="width:12em">
                             <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
-                                        <img class="card-img-top img-fluid" src="{{i.image_url}}"
-                                            style="width:200px; height:250px; display:block; margin:auto">
-                                    </a>
+                                <img class="card-img-top img-fluid" src="{{i.image_url}}"
+                                    style="width:200px; height:250px; display:block; margin:auto">
+                            </a>
                         </div>
                 </div>
                 {% else %}
                 <div id="book_{{loop.index}}" class="col-12 col-sm-6 col-md-3 pl-5 mb-3 bookset_{{bookset_counter.a}}" style="display:none">
                     <div class="card" style="width:12em">
                         <a href="{{url_for('bookInfo', bookID = i.bookNum)}}">
-                                            <img class="card-img-top img-fluid" src="{{i.image_url}}"
-                                                style="width:200px; height:250px; display:block; margin:auto">
-                                        </a>
+                                <img class="card-img-top img-fluid" src="{{i.image_url}}"
+                                    style="width:200px; height:250px; display:block; margin:auto">
+                            </a>
                     </div>
                 </div>
                 {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
@@ -107,7 +106,6 @@
                         {% endif %} {% endfor %}
                     </ul>
                 </div>
-            </div>
             </div>
         </main>
 

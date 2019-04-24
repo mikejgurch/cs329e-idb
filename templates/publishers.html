@@ -70,9 +70,9 @@
                 <div class="col-4">
                 </div>
                 <div class="col-4">
-                    <button id="desc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('publishers_desc')}}';">Sort Z-A</button> &emsp;
-                    <button id="asc" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('publishers_asc')}}';">Sort A-Z</button> &emsp;
-                    <button id="reset" type="button" class="btn btn-success" onclick="window.location.href='{{url_for('publishers')}}';">Reset</button>
+                    <a id="desc" role="button" class="btn btn-success" href="{{url_for('publishers_desc')}}">Sort Z-A</a>
+                    <a id="asc" role="button" class="btn btn-success" href="{{url_for('publishers_asc')}}">Sort A-Z</a>
+                    <a id="reset" role="button" class="btn btn-success" href="{{url_for('publishers')}}">Reset</a>
                 </div>
                 <div class="col-4">
                 </div>
@@ -83,32 +83,32 @@
                         <table class="table mt-3">
                             {% set counter = namespace(a=0) %} {% set set_counter = namespace(a=0) %} {% for i in publishers %} {% if counter.a == 0 %} {% set set_counter.a = set_counter.a + 1 %} {% endif %} {% if set_counter.a
                             <=5 %} {% if counter.a==0 %} <tr>
-                                <td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+                                <td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
                                 </td>
                                 <!--0-->
                                 {% elif counter.a == 2 %}
-                                <td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+                                <td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
                                 </td>
                                 <!--2-->
                                 {% set counter.a = -1 %}
                                 </tr>
                                 {% else %}
-                                <td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+                                <td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}" style="width:200px"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
                                 </td>
                                 <!--1-->
                                 {% endif %} {% else %} {% if counter.a == 0 %}
                                 <tr>
-                                    <td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+                                    <td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
                                     </td>
                                     <!--0-->
                                     {% elif counter.a == 2 %}
-                                    <td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+                                    <td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
                                     </td>
                                     <!--2-->
                                     {% set counter.a = -1 %}
                                 </tr>
                                 {% else %}
-                                <td id="book_{{loop.index}}" class="bookset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
+                                <td id="publisher_{{loop.index}}" class="publisherset_{{set_counter.a}}" style="width:200px; display:none"><a href="{{url_for('publisherInfo', publisherID = i.publisherNum)}}">{{i.publisher}}</a>
                                 </td>
                                 <!--1-->
                                 {% endif %} {% endif %} {% set counter.a = counter.a + 1 %} {% endfor %}
@@ -120,9 +120,9 @@
                 <div class="col">
                     <ul class="pagination justify-content-center">
                         {% for i in range((set_counter.a // 5)) %} {% if i == 0 %}
-                        <li id="bookpage_1" class="page-item active"><a class="page-link" href="#publisherpage_1" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
+                        <li id="publisherpage_1" class="page-item active"><a class="page-link" href="#publisherpage_1" onclick="showPublishers(this.innerHTML)">{{i + 1}}</a></li>
                         {% else %}
-                        <li id="bookpage_{{i + 1}}" class="page-item"><a class="page-link" href="#publisherpage_{{i + 1}}" onclick="showBooks(this.innerHTML)">{{i + 1}}</a></li>
+                        <li id="publisherpage_{{i + 1}}" class="page-item"><a class="page-link" href="#publisherpage_{{i + 1}}" onclick="showPublishers(this.innerHTML)">{{i + 1}}</a></li>
                         {% endif %} {% endfor %}
                     </ul>
                 </div>

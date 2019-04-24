@@ -11,12 +11,15 @@
 
     <!--Bootstrap CDN (CSS, JS, Popper, jQuery)-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -62,39 +65,54 @@
             <div class="row">
                 <div class="col-1"><br /></div>
                 <div class="col-4 text-center pt-5">
-                    <img src="{{i.image_url}}" alt="{{i.author}}" style="width:75%; display: block; margin: auto ">&nbsp;
+                    <img src="{{i.image_url}}" alt="{{i.author}}"
+                        style="width:75%; display: block; margin: auto; object-fit:cover ">&nbsp;
                 </div>
                 <div class="col-6 pt-4">
                     <h2 class="mb-3 ">{{i.author}}</h2>
-                    <hr /> {% if i.description is none %} {% else %}
-                    <p>{{i.description}}</p>{% endif %}
+                    <hr />
+                    {% if i.description is none %}
+                    {% else %}
+                    <p>{{i.description}}</p>
+                    {% endif %}
                     <table class="table table-striped" style="width:100%">
-                        {% if i.born is none %} {% else %}
+                        {% if i.born is none %}
+                        {% else %}
                         <tr>
                             <th scope="row ">Born</th>
                             <td>{{i.born}}</td>
                         </tr>
-                        {% endif %}{% if i.died is none %} {% else %}
+                        {% endif %}
+                        {% if i.died is none %}
+                        {% else %}
                         <tr>
                             <th scope="row ">Died</th>
                             <td>{{i.died}}</td>
                         </tr>
-                        {% endif %}{% if i.nationality is none %} {% else %}
+                        {% endif %}
+                        {% if i.nationality is none %}
+                        {% else %}
                         <tr>
                             <th scope="row ">Nationality</th>
                             <td>{{i.nationality}}</td>
                         </tr>
-                        {% endif %}{% if i.education is none %} {% else %}
+                        {% endif %}
+                        {% if i.education is none %}
+                        {% else %}
                         <tr>
                             <th scope="row ">Education</th>
                             <td>{{i.education}}</td>
                         </tr>
-                        {% endif %}{% if i.alma_mater is none %} {% else %}
+                        {% endif %}
+                        {% if i.alma_mater is none %}
+                        {% else %}
                         <tr>
                             <th scope="row ">Alma Mater</th>
                             <td>{{i.alma_mater}}</td>
                         </tr>
-                        {% endif %}{% if i.wikipedia_url is none %} {% else %}
+                        {% endif %}
+                        {% if i.wikipedia_url is none %}
+                        {% else %}
                         <tr>
                             <th scope="row ">Wikipedia</th>
                             <td><a href="{{i.wikipedia_url}}">{{i.wikipedia_url}}</a>
@@ -126,10 +144,11 @@
                 {% for j in bookList %}
                 <div class="col-3 mb-2">
                     <a href="{{url_for('bookInfo', bookID = j.bookNum)}}">
-                                <img class="card-img-top img-fluid"
-                                    src="{{j.image_url}}" style="width:200px; height:250px; display:block; margin:auto">
-                            </a>
-                </div>{% endfor %}
+                        <img class="card-img-top img-fluid" src="{{j.image_url}}"
+                            style="width:200px; height:250px; display:block; margin:auto; object-fit:cover">
+                    </a>
+                </div>
+                {% endfor %}
             </div>
         </div>
         </div>
@@ -153,9 +172,10 @@
                         </li>
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0" id="currentDate"></p>
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>. All Rights Reserved.</p>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; goodbooksfor.me <span id="currentYear">2019</span>.
+                        All Rights Reserved.</p>
                     <script>
-                        window.addEventListener("load", function() {
+                        window.addEventListener("load", function () {
                             currentDate();
                             currentYear();
                         });
