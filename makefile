@@ -29,7 +29,7 @@ RunTests.out: test.py
 IDB3.log:
 	git log > IDB3.log
 
-test: RunTests.out IDB3.log
+test: IDB3.log RunTests.out
 	 
-LaunchTestEnv: main.py
+TestApp: main.py
 	$(PYTHON) main.py
