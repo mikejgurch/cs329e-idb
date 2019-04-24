@@ -30,7 +30,7 @@ function hidePublishersInitial() {
 
 function showPublishers(publisherset) {
     hidePublishers();
-    toggleActive(publisherset);
+    toggleActivePub(publisherset);
 
     var i = Number(publisherset * 15 - 14);
     var j = Number(publisherset * 15);
@@ -48,7 +48,7 @@ function showPublishersInitial() {
     showPublishers("1");
 }
 
-function toggleActive(current_publisherpage) {
+function toggleActivePub(current_publisherpage) {
     var i = 1;
     while (true) {
         var publisherpage = "publisherpage_" + String(i);
