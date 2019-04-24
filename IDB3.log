@@ -1,3 +1,101 @@
+commit ddc669824128cf97950bdbc10205a815e1a65132
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 24 16:23:57 2019 -0500
+
+    updating makefile and log
+
+commit a7c99a589ff8f07f35ff9c6c9840b0d7a57031af
+Merge: f7edadf a7073c3
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 24 16:16:32 2019 -0500
+
+    Merge branch 'dev' of https://gitlab.com/codingking5/cs329e-idb into dev
+
+commit f7edadfadba56c26b450a0545ebc472837e7ef05
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 24 16:16:08 2019 -0500
+
+    Adding makefile. Fixes #51
+
+commit a7073c3713c2c0459ca6110ff4723c6ec41565a2
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Wed Apr 24 11:42:26 2019 -0500
+
+    Fixed bug in test.py
+
+commit 5a03faf8bd7626ea93158425f7719de29e16b414
+Author: Michael Gurch <michaelgurch@utexas.edu>
+Date:   Wed Apr 24 11:20:03 2019 -0500
+
+    added more unit tests
+
+commit 156b06040873d42a1851fd23017e58208ca1a9ea
+Author: Jorge Caviedes <alecav98@gmail.com>
+Date:   Wed Apr 24 09:11:35 2019 -0500
+
+    Added unit tests for search capability
+
+commit 1ffbc73bd224f4928c36f56d01c9e7be8bb8b808
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Wed Apr 24 01:50:41 2019 -0500
+
+    Wrote 5 unit tests
+
+commit 752e3a40594106880e70f7ff24000dec69430df3
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 24 01:01:52 2019 -0500
+
+    Wrote some unit tests for bookInfo function and search function
+
+commit a49d74d0b1cc26551b89e0824df5d7671b79c998
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Tue Apr 23 22:47:11 2019 -0500
+
+    Fixed pagination on publisher search results
+
+commit 124b554a1caa03521ed2298d4b26dadaa69f99d0
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Tue Apr 23 22:41:53 2019 -0500
+
+    Added comments for search.html. Completes #48.
+
+commit 917334ebe5b33d3ec3c8b78e85ab32169ba4b600
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Tue Apr 23 22:38:53 2019 -0500
+
+    Pagination now works for search results. Fixes #43.
+
+commit 2792f7af698ed2736a1b4d957f88491f8385062d
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Tue Apr 23 19:34:01 2019 -0500
+
+    Fixed pagination on publishers page and HEAD text on about page. Fixed #46. Fixed #47.
+
+commit 0bc1c46f4b93c2aa0795f9bba1137859f0b47af4
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Tue Apr 23 16:17:16 2019 -0500
+
+    Fixed TemplateSyntaxError in authors page. Fixed #45
+
+commit c1242e0d88f4ffd31833bc077321964511ab8ca2
+Merge: 7626088 64e14ce
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Tue Apr 23 16:15:02 2019 -0500
+
+    Merge branch 'dev' of gitlab.com:codingking5/cs329e-idb into dev
+
+commit 76260888fdb33a32e2df704fca9a2f8f903b5b78
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Tue Apr 23 16:12:54 2019 -0500
+
+    Updated search results page but pagination for authors hasn't been fixed
+
+commit 64e14ce9d9840b911e322188f0ee420b21a86a92
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Tue Apr 23 12:08:05 2019 -0500
+
+    Preparing app for search unit tests
+
 commit b440f0d1327bd6a1aacccc6a695b309ff2b01e6c
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Tue Apr 23 11:13:01 2019 -0500
