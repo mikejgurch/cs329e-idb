@@ -404,11 +404,19 @@ class SearchTestCases(unittest.TestCase):
 
         for i in a_results:
             authorResults.append(i)
-        self.assertTrue(len(authorResults) ==
-                        db.session.query(Author.author).count())
+        self.assertTrue(len(authorResults) ==                                                       db.session.query(Author.author).count())
 
+    # Checks that all 3 authors are returned if a user searches "jo"
     def test_searchAuthor_3(self):
-        pass
+        user_search = "jo"
+        search_in = str(user_search).lower()
+        authorResults = []
+
+        a_results = db.session.query(Author).filter(func.lower(Author.author).like("%" + search_in + "%")).from_self()
+
+        for i in a_results:
+            authorResults.append(i)
+        self.assertTrue(len(authorResults) == 3)
 
     # Checks if list is empty since empty lists evaluate as false
     def test_searchPublisher_1(self):
@@ -436,8 +444,19 @@ class SearchTestCases(unittest.TestCase):
         self.assertTrue(len(publisherResults) ==
                         db.session.query(Publisher.publisher).count())
 
+    # Checks that all 7 publishers are returned when a user searches
+    # "publishing"
     def test_searchPublisher_3(self):
-        pass
+        user_search = "publishing"
+        search_in = str(user_search).lower()
+        publisherResults = []
+
+        p_results = db.session.query(Publisher).filter(func.lower(
+            Publisher.publisher).like("%" + search_in + "%")).from_self()
+
+        for i in p_results:
+            publisherResults.append(i)
+        self.assertTrue(len(publisherResults) ==7)
 
 
 if __name__ == '__main__':
