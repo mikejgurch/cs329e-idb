@@ -278,17 +278,60 @@ class DBTestCases(unittest.TestCase):
             if (book_id == str(i.bookNum)):
                 self.assertTrue(i.isbn == "9781568589763")
 
+    # Checks if the author name and publisher are correct for author 43
     def test_authorInfo_1(self):
-        pass
+        author_id = "43"
+        authors = db.session.query(Author).all()
+        books = db.session.query(Book).all()
+        for i in authors:
+            if (author_id == str(i.authorNum)):
+                self.assertTrue(i.author == "Eric Carle")
+                bookList = [j for j in books if i.authorNum == j.authorNum]
+                publishers = []
+                publisherList = []
+                for k in bookList:
+                    if k.publisher not in publishers:
+                        publishers.append(k.publisher)
+                        publisherList.append(k)
+                        self.assertTrue(publishers == ["Penguin Group"])
 
+    # Checks if the author name and publisher are correct for author 22
     def test_authorInfo_2(self):
-        pass
+        author_id = "22"
+        authors = db.session.query(Author).all()
+        books = db.session.query(Book).all()
+        for i in authors:
+            if (author_id == str(i.authorNum)):
+                self.assertTrue(i.author == "Anne Frank")
+                bookList = [j for j in books if i.authorNum == j.authorNum]
+                publishers = []
+                publisherList = []
+                for k in bookList:
+                    if k.publisher not in publishers:
+                        publishers.append(k.publisher)
+                        publisherList.append(k)
+                        self.assertTrue(publishers == ["Bantam Books"])
 
     def test_authorInfo_3(self):
         pass
 
+    # Checks if the publisher name and authors are correct for publisher 35
     def test_publisherInfo_1(self):
-        pass
+        publisher_id = "35"
+        publishers = db.session.query(Publisher).all()
+        books = db.session.query(Book).all()
+        for i in publishers:
+            if (publisher_id == str(i.publisherNum)):
+                self.assertTrue(i.publisher == "Arcturus Publishing")
+                bookList = [
+                    j for j in books if i.publisherNum == j.publisherNum]
+                authors = []
+                authorList = []
+                for k in bookList:
+                    if k.author not in authors:
+                        authors.append(k.author)
+                        authorList.append(k)
+                        self.assertTrue(authors == ["George Orwell"])
 
     def test_publisherInfo_2(self):
         pass
@@ -322,7 +365,8 @@ class SearchTestCases(unittest.TestCase):
 
         for i in b_results:
             bookResults.append(i)
-        self.assertTrue(len(bookResults) == db.session.query(Book.title).count())
+        self.assertTrue(len(bookResults) ==
+                        db.session.query(Book.title).count())
 
     # Checks that all 7 harry potter books are in the list if the user searches "harry
     def test_searchBook_3(self):
@@ -351,7 +395,17 @@ class SearchTestCases(unittest.TestCase):
         self.assertFalse(authorResults)
 
     def test_searchAuthor_2(self):
-        pass
+        user_search = ""
+        search_in = str(user_search).lower()
+        authorResults = []
+
+        a_results = db.session.query(Author).filter(func.lower(
+            Author.author).like("%" + search_in + "%")).from_self()
+
+        for i in a_results:
+            authorResults.append(i)
+        self.assertTrue(len(authorResults) ==
+                        db.session.query(Author.author).count())
 
     def test_searchAuthor_3(self):
         pass
@@ -370,7 +424,17 @@ class SearchTestCases(unittest.TestCase):
         self.assertFalse(publisherResults)
 
     def test_searchPublisher_2(self):
-        pass
+        user_search = ""
+        search_in = str(user_search).lower()
+        publisherResults = []
+
+        p_results = db.session.query(Publisher).filter(func.lower(
+            Publisher.publisher).like("%" + search_in + "%")).from_self()
+
+        for i in p_results:
+            publisherResults.append(i)
+        self.assertTrue(len(publisherResults) ==
+                        db.session.query(Publisher.publisher).count())
 
     def test_searchPublisher_3(self):
         pass
