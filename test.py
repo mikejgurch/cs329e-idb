@@ -314,12 +314,12 @@ class DBTestCases(unittest.TestCase):
 
     # Checks if the author name and publisher are correct for author 6
     def test_authorInfo_3(self):
-        author_id = "6"
+        author_id = "20"
         authors = db.session.query(Author).all()
         books = db.session.query(Book).all()
         for i in authors:
             if (author_id == str(i.authorNum)):
-                self.assertTrue(i.author == "Patrick Rothfuss")
+                self.assertTrue(i.author == "Harper Lee")
                 bookList = [j for j in books if i.authorNum == j.authorNum]
                 publishers = []
                 publisherList = []
@@ -327,7 +327,7 @@ class DBTestCases(unittest.TestCase):
                     if k.publisher not in publishers:
                         publishers.append(k.publisher)
                         publisherList.append(k)
-                        self.assertTrue(publishers == ["Victor Gollancz Ltd"])
+                        self.assertTrue(publishers == ["HarperCollins"])
 
 
     # Checks if the publisher name and authors are correct for publisher 35
@@ -364,16 +364,16 @@ class DBTestCases(unittest.TestCase):
                     if k.author not in authors:
                         authors.append(k.author)
                         authorList.append(k)
-                        self.assertTrue(authors == ["George Orwell"])
+                        self.assertTrue(authors == ["Patrick Rothfuss"])
 
     # Checks if the publisher name and authors are correct for publisher 18
     def test_publisherInfo_3(self):
-        publisher_id = "18"
+        publisher_id = "36"
         publishers = db.session.query(Publisher).all()
         books = db.session.query(Book).all()
         for i in publishers:
             if (publisher_id == str(i.publisherNum)):
-                self.assertTrue(i.publisher == "Hachette UK")
+                self.assertTrue(i.publisher == "W. W. Norton & Company")
                 bookList = [
                     j for j in books if i.publisherNum == j.publisherNum]
                 authors = []
@@ -382,7 +382,7 @@ class DBTestCases(unittest.TestCase):
                     if k.author not in authors:
                         authors.append(k.author)
                         authorList.append(k)
-                        self.assertTrue(authors == ["Stieg Larsson"])
+                        self.assertTrue(authors == ["Anthony Burgess"])
 
 
 class SearchTestCases(unittest.TestCase):
