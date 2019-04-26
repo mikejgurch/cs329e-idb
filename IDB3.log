@@ -1,3 +1,34 @@
+commit cd267ea04d880e1a1b86378d24bcff67006752c2
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 24 18:33:23 2019 -0500
+
+    Uploaded missing coverage picture
+
+commit 8105604877be3759fcc50f81a01bd47be87a467b
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 24 18:15:58 2019 -0500
+
+    Fixed about page after merge conflict
+
+commit 965e8789407086dc6e9f0fbff8846a8c7cebc124
+Merge: 8b4d68f 2b31598
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 24 18:09:07 2019 -0500
+
+    Merged branch 'dev'
+
+commit 2b3159823d4c9facb900e84ba514b0338a07752f
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Wed Apr 24 18:03:56 2019 -0500
+
+    Updated stats table and added link to speaker deck presentation
+
+commit 85e0602dc75dcf77793a9b14dc475e79d6f6a8a9
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Wed Apr 24 16:35:23 2019 -0500
+
+    adding models.html to makefile. Fixes #56
+
 commit ddc669824128cf97950bdbc10205a815e1a65132
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Wed Apr 24 16:23:57 2019 -0500
@@ -46,6 +77,13 @@ Author: Vanessa Alexandra <valexandra@utexas.edu>
 Date:   Wed Apr 24 01:01:52 2019 -0500
 
     Wrote some unit tests for bookInfo function and search function
+
+commit 8b4d68f818135b1d7b72fa57cd5778f1f60de677
+Merge: 002579b a49d74d
+Author: Vincent Truong <vtruong68@gmail.com>
+Date:   Tue Apr 23 23:27:28 2019 -0500
+
+    Resolved merge conflicts
 
 commit a49d74d0b1cc26551b89e0824df5d7671b79c998
 Author: Vincent Truong <vtruong68@gmail.com>
@@ -115,6 +153,13 @@ Date:   Mon Apr 22 19:34:45 2019 -0500
 
     Fixed formatting of authors in search results
 
+commit 002579b5642ef2d33ff34a01b809ef711aaf124c
+Merge: 0e69d37 9660af5
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Mon Apr 22 19:31:09 2019 -0500
+
+    Merge branch 'dev'
+
 commit 9660af56b801e187c5b59d792b75c72335b5c8b3
 Author: Vanessa Alexandra <valexandra@utexas.edu>
 Date:   Mon Apr 22 19:27:05 2019 -0500
@@ -139,17 +184,41 @@ Date:   Sun Apr 21 20:56:20 2019 -0500
 
     Search engine still in progress, have a dummy html file to test it
 
+commit 0e69d37a747cd0e4b82b0c7fe47f259962ba92ca
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Thu Apr 18 04:15:36 2019 -0500
+
+    Fixed formatting of authors page
+
 commit 2a8cf95b3e9b5a88b4167091e1ce5aa19fe7e07a
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Tue Apr 16 12:12:57 2019 -0500
 
     fixed image stretching
 
+commit 49c859b8030a2026c9cd54db3aeb87d3f6e440aa
+Author: Vanessa Alexandra <valexandra@utexas.edu>
+Date:   Sat Apr 13 22:19:27 2019 -0500
+
+    Updated about page
+
 commit 1140649b248c68068cd3b28a6fa2a0a350c90a3b
 Author: Wade Bribach <wadebribach@utexas.edu>
 Date:   Thu Apr 4 22:06:03 2019 -0500
 
     models.html
+
+commit 04b6d7ec94021dcb8e40005613c0a0ef8608c270
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Thu Apr 4 21:58:59 2019 -0500
+
+    models.html
+
+commit 395e6cd763bfafaab586e0238d581ab7d9e6cf1c
+Author: Wade Bribach <wadebribach@utexas.edu>
+Date:   Thu Apr 4 21:52:34 2019 -0500
+
+    adding second log
 
 commit 911de7f67e7451bd8a67f6080972fe753c477d45
 Merge: efb026d 82b970c
